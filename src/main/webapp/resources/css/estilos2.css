@@ -1,0 +1,92 @@
+#raya{
+	padding: 3px;
+	background: #447542;
+}
+header{
+	padding: 20px;
+	background: #fff;
+}
+header a h1{
+	margin-top: 10px;
+	color: #447542;
+	font-weight: bold;
+}
+header a:hover{
+	text-decoration: none;
+}
+body .navbar{
+	border-radius: 0;
+}
+body h3{
+	margin-left: 20px;
+}
+#jumbotron{
+	padding: 15px;
+}
+#tamanio-text-jumbo{
+	font-size: 15px;
+}
+table th{
+	text-align: center;
+}
+#div-btn-guardar{
+	display: flex;
+	justify-content: center;
+}
+.form-horizontal .control-label{
+	text-align: left;
+}
+#btn-select{
+	padding: 2px 12px;
+}
+#textbox-tipobici{
+	padding-right: 0;
+}
+.table>tbody>tr>td{
+	text-align: center;
+	vertical-align: inherit;
+}
+.table th{
+	text-align: center;
+}
+#td-select{
+	text-align: center;
+}
+#container-guardar-bici, #container-actualizar-bici{
+	margin-left: 40%;
+}
+/*------------Bici-------------------*/
+#container-btn-update{
+	text-align: center;
+}
+.form-horizontal .control-label{
+	justify-content: center;
+}
+
+#group-documentacion{
+	height: 110px;
+}
+
+#btn-container{
+	display: flex;
+	justify-content: center;
+	margin-top: 20px.
+}
+body .form-resultado{
+	display: none;
+}
+/* Tipo Bicicleta*/
+body .mostrar-resultado-tipo{
+	display: none;
+}
+.dropdown-menu>li>a:hover{
+	display: block;
+}
+button#btn-bucar-tipobici, #btn-bucar-multa {
+    padding-bottom: 9px;
+}
+li.glyphicon.glyphicon-search {
+    margin-top: 3px;
+}
+
+
