@@ -40,7 +40,7 @@ public class BicicletaController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home(ModelAndView model) {
-		model.setViewName("home");
+		model.setViewName("tipoBicicleta");
 		return model;
 	}
 	
