@@ -26,7 +26,7 @@ public class TipoBicicletaController {
 	public ModelAndView listaTiposBici(ModelAndView model){
 		List<TipoBicicleta> tipos = tipoBiciService.listaTipos();
 		model.addObject("tiposbici", tipos);
-		model.setViewName("form-tipo-bici");
+		model.setViewName("tipoBicicleta");
 		return model;
 	}
 

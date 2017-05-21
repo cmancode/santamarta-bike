@@ -130,6 +130,21 @@
 				  </div>
 				  
 				  <div class="form-group">
+				    <label for="sitio" class="col-sm-3 control-label">Sitio</label>
+				    <div class="col-sm-7" id="textbox-tipobici">
+				    
+				      <input name="id-sitio" id="txtIdSitio" type="hidden"/>
+				      <input name="nombre" id="txtNombreSitio" type="hidden"/>
+				      <input type="text" id="txt-nombre-sitio" class="form-control" disabled="true">
+				    </div>
+				    <div class="col-sm-1">
+				    	<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+				    		<li class="glyphicon glyphicon-plus"></li>
+				    	</button>
+				    </div>
+				  </div>
+				  
+				  <div class="form-group">
 				    <div class="col-sm-offset-2 col-sm-10" id="container-guardar-bici">
 				      <button type="submit" id="guardar-bici" class="btn btn-default btn-action-bici"><span class="glyphicon glyphicon-floppy-saved"></span> Guardar Registro</button>
 				    </div>

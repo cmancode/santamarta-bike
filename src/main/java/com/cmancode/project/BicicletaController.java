@@ -38,11 +38,6 @@ public class BicicletaController {
 	@Autowired
 	private ITipoBiciService tipobiciService;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView home(ModelAndView model) {
-		model.setViewName("tipoBicicleta");
-		return model;
-	}
 	
 	@RequestMapping(value = "/new-bici", method = RequestMethod.GET)
 	public ModelAndView nuevaBici (ModelAndView model){
@@ -50,7 +45,7 @@ public class BicicletaController {
 		List<TipoBicicleta> tipos = tipobiciService.listaTipos();
 		model.addObject("bicis", bicicletas);
 		model.addObject("tiposbici", tipos);
-		model.setViewName("form-nueva-bici");
+		model.setViewName("bicicleta");
 		return model;
 	}
 	

@@ -180,7 +180,7 @@ tbody > tr:hover{
     width: 30%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .contenedor-input-form {
@@ -192,7 +192,7 @@ tbody > tr:hover{
     color: #666;
 }
 
-.label-form::before {
+.label-form::after {
     content: "*";
     color: #F0415B;
     margin-right: 5px;
@@ -215,4 +215,23 @@ tbody > tr:hover{
 
 .input-form:hover {
     border-color: #108ee9;
+}
+
+/*---------Estilos Bicicleta------------------*/
+select.input-form{
+	width: 78%;
+	height: 2.39rem;
+}
+/*----------------Estos Multas -------------------*/
+
+textarea {
+    height: 3rem;
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    padding: 8px 10px;
+    margin: 0;
+    color: #666;
+    border-radius: 3px;
+    width: 70%;
+    background-color: #fff;
 }

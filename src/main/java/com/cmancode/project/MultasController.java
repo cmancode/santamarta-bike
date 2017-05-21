@@ -11,7 +11,7 @@ public class MultasController {
 	
 	@RequestMapping(value = "/multas", method = RequestMethod.GET)
 	public ModelAndView indexMultas(ModelAndView model){
-		model.setViewName("form-nueva-multa");
+		model.setViewName("multa");
 		return model;
 	}
 

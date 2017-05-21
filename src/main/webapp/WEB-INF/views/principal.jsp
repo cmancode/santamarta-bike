@@ -11,18 +11,18 @@
         	<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons cyan-text">menu</i></a>
         </div>
     </nav>
-    <ul id="slide-out" class="side-nav fixed cyan">
+    <ul id="slide-out" class="side-nav fixed indigo darken-2">
     	<li class="center-align">
         	<h5>LOGO</h5>
         </li>
         <li>
-       		<a href="#" class="">Tipos De Bicicletas</a>
+       		<a href="tipobici" class="">Tipos de Bicicletas</a>
         </li>
         <li>
-        	<a href="#"  class="">Bicicletas</a>
+        	<a href="new-bici"  class="">Bicicletas</a>
         </li>
         <li>
-        	<a href="#"  class="">Bicicleta Otra</a>
+        	<a href="multas"  class="">Multas</a>
         </li>
         <li>
         	<a href="#" class="">Bicicleta Otra</a>
