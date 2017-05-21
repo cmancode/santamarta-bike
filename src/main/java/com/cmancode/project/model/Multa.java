@@ -38,5 +38,4 @@ public class Multa {
 		this.estado = estado;
 	}
 	
-	
 }
