@@ -5143,7 +5143,6 @@ button.btn-floating {
 .waves-effect .waves-ripple {
   z-index: -1;
 }
-
 .modal {
   display: none;
   position: fixed;

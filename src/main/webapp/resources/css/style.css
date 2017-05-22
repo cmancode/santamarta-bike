@@ -133,7 +133,7 @@ tbody > tr:hover{
     color: #666;
 }
 
-/* modal ----------------------------------------------*/
+/* modals ----------------------------------------------*/
 
 .modal-header{
     border-bottom: 1px solid #f4f4f4;
@@ -149,6 +149,9 @@ tbody > tr:hover{
     justify-content: flex-end;
 }
 
+div#modal-usuario {
+    width: 68%;
+}
 .btn-ok{
     border: none;
     margin: 0;

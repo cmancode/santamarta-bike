@@ -13,7 +13,7 @@
     </nav>
     <ul id="slide-out" class="side-nav fixed indigo darken-2">
     	<li class="center-align">
-        	<h5>LOGO</h5>
+        	<a href="/project/" class=""><h5>LOGO</h5></a>
         </li>
         <li>
        		<a href="tipobici" class="">Tipos de Bicicletas</a>
@@ -25,7 +25,7 @@
         	<a href="multas"  class="">Multas</a>
         </li>
         <li>
-        	<a href="#" class="">Bicicleta Otra</a>
+        	<a href="usuarios" class="">Usuarios</a>
     	</li>
 	</ul>
 </header>
