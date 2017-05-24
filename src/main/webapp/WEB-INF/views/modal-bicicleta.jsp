@@ -27,7 +27,7 @@
             	<label for="tipo-bici" class="label-form" >Tipo Bicicleta </label>
             </div>
             <div class="contenedor-input-form">
-            	<select class="input-form" >
+            	<select class="input-form" id="txt-tipobici">
             		<option value = "-1">Seleccionar...</option>     	
 	            	<c:forEach var = "tipos" items="${tiposbici}">
 	            		<option value = "${tipos.idTipoBici}">${tipos.tipo}</option>
@@ -37,10 +37,10 @@
         </div>
         <div class="input-informacion margin-bottom ">
         	<div class="contenedor-label-form">
-            	<label for="sitio" class="label-form" >Estado </label>
+            	<label for="sitio" class="label-form" >Sítio </label>
             </div>
             <div class="contenedor-input-form">
-            	<select class="input-form" >
+            	<select class="input-form" id="txt-sitio">
             		<option value = "-1">Seleccionar...</option>
             		<option value = "1">Sítio 1</option>
             		<option value = "2">Sítio 2</option>
@@ -51,13 +51,13 @@
         </div>
         <div class="input-informacion margin-bottom ">
         	<div class="contenedor-label-form">
-            	<label for="sitio" class="label-form" >Sítio </label>
+            	<label for="estado" class="label-form" >Estado </label>
             </div>
             <div class="contenedor-input-form">
-            	<select class="input-form" >
+            	<select class="input-form" id="txt-estado">
             		<option value = "-1">Seleccionar...</option>
-            		<option value = "1">Disponible</option>
-            		<option value = "2">No disponible</option>
+            		<option value = "DISPONIBLE">DISPONIBLE</option>
+            		<option value = "NO DISPONIBLE">NO DISPONIBLE</option>
             	</select>
             </div>
         </div>
