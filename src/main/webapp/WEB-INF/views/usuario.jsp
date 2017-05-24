@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="resources/css/materialize.css">
         <link rel="stylesheet" href="resources/css/style.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     </head>
     <body>
 	    <%@ include file="principal.jsp" %>

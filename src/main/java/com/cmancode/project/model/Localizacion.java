@@ -7,24 +7,33 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 @Entity
 @Table(name = "LOCALIZACIONES")
 public class Localizacion {
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="idLocalizacion", unique=true, nullable=false)
+	@GeneratedValue(generator="gen")
+	@GenericGenerator(name="gen", strategy="foreign", parameters=@Parameter(name="property", value="sitio"))
 	private Long id;
+
 	@Column(nullable = false)
 	private Long lat;
+
 	@Column(nullable = false)
 	private Long lng;
-	@OneToOne(mappedBy = "localizacion", cascade = CascadeType.ALL)
-	private Sitio sitio;
 	
+	@OneToOne
+	@PrimaryKeyJoinColumn
+	private Sitio sitio;
+
 	public Long getId() {
 		return id;
 	}

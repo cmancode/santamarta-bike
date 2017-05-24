@@ -30,6 +30,7 @@ public class TipoBicicleta {
 	@OneToMany(mappedBy = "idTipoBici")
 	private Set<Bicicleta> bicicleta;
 	
+	
 	public Set<Bicicleta> getBicicleta() {
 		return bicicleta;
 	}

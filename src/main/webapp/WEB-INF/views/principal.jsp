@@ -27,5 +27,8 @@
         <li>
         	<a href="usuarios" class="">Usuarios</a>
     	</li>
+        <li>
+        	<a href="sitios" class="">Puntos de Retorno</a>
+    	</li>
 	</ul>
 </header>

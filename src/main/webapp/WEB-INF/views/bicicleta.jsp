@@ -35,6 +35,7 @@
 	                                        <th>Tipo</th>
 	                                        <th>Color</th>
 	                                        <th>Sítio Asignado</th>
+	                                        <th>Estado</th>
 	                                        <th>Acción</th>
 	                                    </tr>
 	                                </thead>
@@ -44,7 +45,8 @@
 	                                    	<td>${bicicleta.placa}</td>
 	                                    	<td>${bicicleta.idTipoBici.tipo}</td>
 	                                    	<td>${bicicleta.color}</td>
-	                                    	<td>Sitio</td>
+	                                    	<td>${bicicleta.idSitio.nombre}</td>
+	                                    	<td>${bicicleta.estado}</td>
 	                                        <td><input type="button" name="actualizar" class="btn-actualizar btn-accion" value="Editar"></td>
 	                                    </tr>
 	                                    </c:forEach>
