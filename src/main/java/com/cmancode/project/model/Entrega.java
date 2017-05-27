@@ -33,7 +33,7 @@ public class Entrega {
 	
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "idNovedad", nullable = false)
-	private Novedades novedad;
+	private Novedad novedad;
 	
 	@Column(nullable = false, length = 10)
 	private String hora;
@@ -66,11 +66,11 @@ public class Entrega {
 		this.usuario = usuario;
 	}
 
-	public Novedades getNovedad() {
+	public Novedad getNovedad() {
 		return novedad;
 	}
 
-	public void setNovedad(Novedades novedad) {
+	public void setNovedad(Novedad novedad) {
 		this.novedad = novedad;
 	}
 
