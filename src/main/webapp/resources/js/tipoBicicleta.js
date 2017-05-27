@@ -23,11 +23,13 @@ function accion(){
 	$('#tabla-tipoBicicleta').on('click', '.btn-actualizar', function(e){
 		e.preventDefault();
 		tr =  $(this).parents('tr');
+		borradoFormulario();
 		cambiarEditarModal();
 	});
 	
 	$('#agregar').on('click', function(e){
 		e.preventDefault();
+		borradoFormulario();
 		cambiarGuardarModal();
 	});
 	
