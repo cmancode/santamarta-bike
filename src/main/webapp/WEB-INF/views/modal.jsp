@@ -25,8 +25,8 @@
     </div>
       <div class="modal-foter">
       	<div class="contenido-botones-foter">
-        	<button class="modal-action modal-close waves-effect waves-green btn-cancelar">Cancelar</button>
-            <button  class="modal-action modal-close waves-effect waves-green btn-ok">Ok</button>
+        	<button class="modal-action modal-close waves-effect waves-green btn-cancelar" >Cancelar</button>
+            <button  class="modal-action modal-close waves-effect waves-green btn-ok" id="ok">Ok</button>
         </div>
       </div>
  </div>
