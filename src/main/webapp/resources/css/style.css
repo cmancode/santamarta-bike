@@ -166,6 +166,7 @@ tbody > tr:hover{
 
 .contenedor-total-res {
     color: #666;
+    margin-top: 20px;
 }
 
 /* modals ----------------------------------------------*/
@@ -200,7 +201,8 @@ div#modal-usuario {
 .btn-cancelar{
     background-color: white;
     border: 1px solid #e5e5e5;
-    padding: 8px 10px;
+    padding: 9px 10px;
+    margin-right: 20px;
     border-radius: 3px;
     color: #666;
     cursor: pointer;
