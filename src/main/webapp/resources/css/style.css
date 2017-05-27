@@ -12,6 +12,17 @@ hr{
 	font-size: 29px;
 	font-weight: 900;
 }
+.side-nav li > a > i{
+	float: left;
+    height: 48px;
+    line-height: 48px;
+    margin-right: 5px;
+    width: 24px;
+    color: #fafafa !important;
+}
+#li-container-logo{
+	margin-bottom: 22px;
+}
 button, input {
     outline: 0px;
 }
@@ -51,19 +62,19 @@ ul[class*="side-nav"] {
 
 /*---------------Menu----------------------------*/
 #slide-out li > a, #slide-out li ul a{
-	color: #fff;
+	color: #fafafa;
 	padding: 7px 15px;
 }
 #slide-out ul{
 	display: none;
 }
 #slide-out li ul{ /*Fondo de los sub-menus*/
-	background: #1408FF;
+	background: #4C5457;
 	color: #fff;
 }
 
 #slide-out{
-	background: #1C0082 !important;
+	background: #20222D !important;
 }
 /*------------Fin Menu---------------------------*/
 
