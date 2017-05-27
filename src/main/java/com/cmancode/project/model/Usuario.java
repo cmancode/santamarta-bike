@@ -53,9 +53,6 @@ public class Usuario {
 	@Column(name = "dir_residencia", nullable = false, length = 30)
 	private String dirResidencia;
 	
-	@Column(name = "user_name", nullable = false, length = 25)
-	private String userName;
-	
 	@Column(name = "pass", nullable = false, length = 25)
 	private String password;
 	
@@ -131,12 +128,6 @@ public class Usuario {
 	}
 	public void setDirResidencia(String dirResidencia) {
 		this.dirResidencia = dirResidencia;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 	public String getPassword() {
 		return password;

@@ -52,11 +52,19 @@
 		            	<input type="text" name="s-apellido" id="txt-sapellido" class="input-form">
 		            </div>
 		        </div>
+		    	<div class="input-informacion margin-bottom">
+		        	<div class="contenedor-label-form ">
+		            	<label for="pass" class="label-form" >Contraseña </label>
+		            </div>
+		            <div class="contenedor-input-form ">
+		            	<input type="password" name="pass" id="txt-passw" class="input-form">
+		            </div>
+		        </div>
 			</div>
 			<div class="col s6">
 		    	<div class="input-informacion margin-bottom">
 		        	<div class="contenedor-label-form ">
-		            	<label for="ciudad" class="label-form" >Ciudad Residencia </label>
+		            	<label for="ciudad" class="label-form" >Ciudad Resid. </label>
 		            </div>
 		            <div class="contenedor-input-form ">
 		            	<input type="text" name="ciudad" id="txt-ciudad" class="input-form">
@@ -92,6 +100,14 @@
 		            </div>
 		            <div class="contenedor-input-form ">
 		            	<input type="text" name="telefono" id="txt-telefono" class="input-form">
+		            </div>
+		        </div>
+		    	<div class="input-informacion margin-bottom">
+		        	<div class="contenedor-label-form ">
+		            	<label for="pass" class="label-form" >Confirmar Contraseña </label>
+		            </div>
+		            <div class="contenedor-input-form ">
+		            	<input type="password" name="pass2" id="txt-confirmar-pss" class="input-form">
 		            </div>
 		        </div>
 			</div>
