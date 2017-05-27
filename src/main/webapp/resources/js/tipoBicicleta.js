@@ -1,7 +1,6 @@
 /*
  * variable opcion definida para las opciones del usuario en la peticion sea editar o guardar
  */
-var opcion = 0;
 var tr;
 
 $(function(){
@@ -17,67 +16,107 @@ $(function(){
 	});
 	
 	accion();
-	optenerTipoBicicleta();
 	buscarTipoBicicleta();
 });
 
 function accion(){
-	$('.btn-actualizar').on('click', function(e){
+	$('#tabla-tipoBicicleta').on('click', '.btn-actualizar', function(e){
 		e.preventDefault();
-		console.log("sasa");
-		opcion = 2;
-		vTipoBicicleta = $('#tipoBici');
-		vDescripcion   = $('#descripcion');
 		tr =  $(this).parents('tr');
-		tdTipo = tr.children('td:nth-child(1)');
-		tdDescripcion = tr.children('td:nth-child(2)');
-		vTipoBicicleta.val(tdTipo[0].innerText)
-		vDescripcion.val(tdDescripcion[0].innerText);
+		cambiarEditarModal();
 	});
 	
 	$('#agregar').on('click', function(e){
 		e.preventDefault();
-		opcion = 1;	
-	});	
-	
-	$('.btn-cancelar').on('click', function(e){
-		e.preventDefault();
-		borradoFormulario();
+		cambiarGuardarModal();
 	});
 	
-	$('.prueba').on('click', function(e){
-		alert("sasas");
-	});
-
-}
-
-function optenerTipoBicicleta(){
-	$('#ok').on('click', function(e){
+	$('#cambiar-btns-modal').on('click', '.editarTipoBicicleta', function(e){
 		e.preventDefault();
-		vTipoBicicleta = $('#tipoBici');
-		vDescripcion   = $('#descripcion');
-		
-		var tipoBicicleta = {
-			tipo: vTipoBicicleta.val() ,
-			descripcion: vDescripcion.val()
-		}
-		
-		if (opcion == 1) {
-			guardarTipoBicicleta(tipoBicicleta);		
-		}else if(opcion == 2){
-			editarTipoBicicleta(tipoBicicleta);
-		}
+		console.log("actualiza ");
+		actualizarTipoBicicleta();
 	});
-	opcion = 0;
+	
+	$('#cambiar-btns-modal').on('click', '.guardarTipoBicicleta', function(e){
+		e.preventDefault();
+		console.log("crear");
+		crearTipoBicicleta();
+	});
 }
 
-function guardarTipoBicicleta(json){
-	console.log("ajax guardar");
+function cambiarEditarModal(){
+	//llenar los campos del modal con los datos encontrados en la tabla 
+	
+	vTipoBicicleta = $('#tipoBici');
+	vDescripcion   = $('#descripcion');
+	tdTipo = tr.children('td:nth-child(1)');
+	tdDescripcion = tr.children('td:nth-child(2)');
+	vTipoBicicleta.val(tdTipo[0].innerText);
+	vDescripcion.val(tdDescripcion[0].innerText);
+	$('#cambiar-btns-modal').html(
+			"<button class='modal-action modal-close waves-effect waves-green btn-cancelar'>Cancelar</button>"+
+			"<button class='modal-action modal-close waves-effect waves-green btn-ok editarTipoBicicleta'>Actualizar Registro</button>"
+	);
+}
+
+function cambiarGuardarModal(){
+	$('#cambiar-btns-modal').html(
+			"<button class='modal-action modal-close waves-effect waves-green btn-cancelar'>Cancelar</button>"+
+			"<button class='modal-action modal-close waves-effect waves-green btn-ok guardarTipoBicicleta'>Guardar Registro</button>"
+	);
+}
+
+function actualizarTipoBicicleta(){
+	console.log("actualizando tipoB");
+	var vTipoBicicleta = $('#tipoBici');
+	var vDescripcion   = $('#descripcion');
+	
+	var tipoBicicleta = {
+		tipo: vTipoBicicleta.val() ,
+		descripcion: vDescripcion.val()
+	}
+	
+	var id = tr.data().id;
+	var solicitud = $.ajax({
+		type 		: 'PUT',
+		contentType : 'application/json',
+		url			: 'tipoBicicleta/'+id,
+		data		: JSON.stringify(tipoBicicleta),
+		dataType	: 'json'
+	});
+	
+	solicitud.done(function(datos){
+		
+		tdTipo = tr.children('td:nth-child(1)');
+		tdDescripcion = tr.children('td:nth-child(2)');
+		
+		tdTipo.text(datos.tipo);
+		tdDescripcion.text(datos.descripcion);
+	});
+	
+	solicitud.fail(function(jqXHR, textStatus){
+		 alert( "Request failed: " + textStatus  + jqXHR);
+	});
+	
+}
+
+	
+
+function crearTipoBicicleta(){
+	console.log("creando tipoB");
+	vTipoBicicleta = $('#tipoBici');
+	vDescripcion   = $('#descripcion');
+	
+	var tipoBicicleta = {
+		tipo: vTipoBicicleta.val() ,
+		descripcion: vDescripcion.val()
+	}
+	
 	var solicitud = $.ajax({
 		type 		: 'POST',
 		contentType : 'application/json',
 		url			: 'tipoBicicleta',
-		data		: JSON.stringify(json),
+		data		: JSON.stringify(tipoBicicleta),
 		dataType	: 'json'
 	});
 	
@@ -96,41 +135,7 @@ function guardarTipoBicicleta(json){
 		valor+=1;
 		vcantidad.text(valor);
 	});
-	
-	solicitud.fail(function(jqXHR, textStatus ) {
-		  alert( "Request failed: " + textStatus + jqXHR);
-		
-	});
-	
-	borradoFormulario();
-}
 
-function editarTipoBicicleta(json, id){
-	console.log("editar");
-	
-	var id = tr.data().id;
-	var solicitud = $.ajax({
-		type 		: 'PUT',
-		contentType : 'application/json',
-		url			: 'tipoBicicleta/'+id,
-		data		: JSON.stringify(json),
-		dataType	: 'json'
-	});
-	
-	solicitud.done(function(datos){
-		console.log(datos);
-		
-		tdTipo = tr.children('td:nth-child(1)');
-		tdDescripcion = tr.children('td:nth-child(2)');
-		
-		tdTipo.text(datos.tipo);
-		tdDescripcion.text(datos.descripcion);
-	});
-	
-	solicitud.fail(function(jqXHR, textStatus){
-		 alert( "Request failed: " + textStatus  + jqXHR);
-	});
-	
 	
 }
 
@@ -166,9 +171,6 @@ function buscarTipoBicicleta(){
 	});
 }
 
-function normal() {
-	alert("ddsds");
-}
 
 function borradoFormulario(){
 	
@@ -178,4 +180,7 @@ function borradoFormulario(){
 	vTipoBicicleta.val(' ');
 	vDescripcion.val(' ');
 }
-
+	
+	
+	
+	
