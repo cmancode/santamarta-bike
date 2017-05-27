@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="es">
 	    <head>
-        <title>Usuarios</title>
+        <title>Admin Usuarios</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="resources/css/materialize.css">
@@ -45,16 +45,18 @@
 	                                    </tr>
 	                                </thead>
 	                                <tbody>
-	                                	<tr>
-	                                    	<td>Cédula Ciudadanía</td>
-	                                        <td>1152933123</td>
-	                                        <td>CARLOS ALBERTO</td>
-	                                        <td>MANTILLA</td>
-	                                        <td>BERDUGO</td>
-	                                        <td>carmantillab@gmail.com</td>
-	                                        <td>ADMINISTRADOR</td>
+	                               	<c:forEach var="lUsuarios" items="${listUsuarios}"> 
+	                               		<tr>
+	                                    	<td>${lUsuarios.tipoDoc}</td>
+	                                        <td>${lUsuarios.cedula}</td>
+	                                        <td>${lUsuarios.nombres}</td>
+	                                        <td>${lUsuarios.pApellido}</td>
+	                                        <td>${lUsuarios.sApellido}</td>
+	                                        <td>${lUsuarios.email}</td>
+	                                        <td>--</td>
 	                                        <td><input type="button" name="actualizar" class="btn-actualizar btn-accion" value="Actualizar"></td>
 	                                    </tr>
+	                               	</c:forEach>
 	                                </tbody>
 	                          	</table>
 	                   			<div class="contenedor-total-res">
@@ -72,5 +74,6 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
         <script src="resources/js/index.js"></script>
+        <script src="resources/js/logicaUsuario.js"></script>
 	</body>	      	
 </html>
