@@ -588,7 +588,7 @@
 }
 
 .indigo.darken-2 {
-  background-color: #303f9f !important;
+  background-color: #1C0082 !important;
 }
 
 .indigo-text.text-darken-2 {
@@ -5143,7 +5143,6 @@ button.btn-floating {
 .waves-effect .waves-ripple {
   z-index: -1;
 }
-
 .modal {
   display: none;
   position: fixed;
@@ -6088,7 +6087,7 @@ select:disabled {
 }
 
 .side-nav li > a {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(251, 251, 251, 0.87);
   display: block;
   font-size: 14px;
   font-weight: 500;

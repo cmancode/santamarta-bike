@@ -25,6 +25,7 @@ public class TipoBicicletaController {
 	@RequestMapping(value = "/tipoBicicleta", method = RequestMethod.GET)
 	public ModelAndView listaTiposBici(ModelAndView model){
 		List<TipoBicicleta> tipos = tipoBiciService.listaTipos();
+
 		model.addObject("tiposbicicleta", tipos);
 		model.setViewName("tipoBicicleta");
 		return model;

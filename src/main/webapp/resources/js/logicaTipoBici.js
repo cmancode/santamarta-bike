@@ -65,11 +65,10 @@ guardarTipoBicicleta = function(){
 					 "<td id='td-editar'><a href='#' class='btn btn-warning btn-xs'><i class='glyphicon glyphicon-edit'></i> Editar</a></th>"+
 				"</td>"
 				);
-			console.log(datos);
 		});
 		
 		solicitud.fail(function(jqXHR, textStatus ) {
-			  alert( "Request failed: " + textStatus );
+			  alert( "Request failed: " + jqXHR);
 			
 		});
 		

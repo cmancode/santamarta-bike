@@ -9,9 +9,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class UsuarioController {
 
 	
-	@RequestMapping(value = "/usuario", method = RequestMethod.GET)
+	@RequestMapping(value = "/usuarios", method = RequestMethod.GET)
 	public ModelAndView nuevoUsuario(ModelAndView model){
-		model.setViewName("form-nuevo-usuario");
+		model.setViewName("usuario");
 		return model;
 	}
 	

@@ -19,15 +19,14 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.cmancode.project.model.Bicicleta;
+import com.cmancode.project.model.Sitio;
 import com.cmancode.project.model.TipoBicicleta;
 import com.cmancode.project.service.IBiciService;
+import com.cmancode.project.service.ISitioService;
 import com.cmancode.project.service.ITipoBiciService;
 
 
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 public class BicicletaController {
 
@@ -37,28 +36,24 @@ public class BicicletaController {
 	private IBiciService biciService;
 	@Autowired
 	private ITipoBiciService tipobiciService;
+	@Autowired
+	private ISitioService sitioService;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView home(ModelAndView model) {
-		model.setViewName("tipoBicicleta");
-		return model;
-	}
 	
 	@RequestMapping(value = "/new-bici", method = RequestMethod.GET)
 	public ModelAndView nuevaBici (ModelAndView model){
 		List<Bicicleta> bicicletas = biciService.listaBicis();
 		List<TipoBicicleta> tipos = tipobiciService.listaTipos();
+		List<Sitio> sitios = sitioService.listSitios();
+		model.addObject("sities", sitios);
 		model.addObject("bicis", bicicletas);
 		model.addObject("tiposbici", tipos);
-		model.setViewName("form-nueva-bici");
+		model.setViewName("bicicleta");
 		return model;
 	}
 	
 	@RequestMapping(value = "/new-bici", method = RequestMethod.POST)
 	public ResponseEntity<Bicicleta> crearBici (@RequestBody Bicicleta bicicleta, UriComponentsBuilder ucBuilder){		
-//		if(bicicleta!=null && biciService.existeBici(bicicleta)){
-//			return new ResponseEntity<Bicicleta>(HttpStatus.CONFLICT); No realizaba la inserción si coloco estas sentencias
-//		} Se debe analizar
 		
 		if(bicicleta.getPlaca() != null && biciService.existeBici(bicicleta)){
 			return new ResponseEntity<Bicicleta>(HttpStatus.CONFLICT);
@@ -77,14 +72,14 @@ public class BicicletaController {
 		return model;
 	}
 	
-	//Preguntar porque no lo hace por el método GET
 	@RequestMapping(value = "/buscar-bici/{placa}", method = RequestMethod.GET)
 	public ResponseEntity<Bicicleta> buscarBici(@PathVariable("placa") String placa){
-		
+
 		Bicicleta bicicleta = biciService.buscarPorId(placa);
 		if(bicicleta == null){
 			return new ResponseEntity<Bicicleta>(HttpStatus.NOT_FOUND);
 		}
+		System.out.println("Resultado Ok");
 		return new ResponseEntity<Bicicleta>(bicicleta, HttpStatus.OK);
 	}
 
@@ -100,6 +95,7 @@ public class BicicletaController {
 		datosAactualizar.setColor(bicicleta.getColor());
 		datosAactualizar.setEstado(bicicleta.getEstado());
 		datosAactualizar.setIdTipoBici(bicicleta.getIdTipoBici());
+		datosAactualizar.setIdSitio(bicicleta.getIdSitio());
 		biciService.editarBici(datosAactualizar);	
 		return new ResponseEntity<Bicicleta>(datosAactualizar, HttpStatus.OK);
 	}

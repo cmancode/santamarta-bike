@@ -6,6 +6,6 @@ import com.cmancode.project.exceptions.InstanceNotFoundException;
 import com.cmancode.project.model.Bicicleta;
 
 
-public interface IBicicletaDAO extends GenericDAO<Bicicleta, String>{
+public interface IBicicletaDAO extends IGenericDAO<Bicicleta, String>{
 	List<Bicicleta> listaBici(String placa) throws InstanceNotFoundException;
 }

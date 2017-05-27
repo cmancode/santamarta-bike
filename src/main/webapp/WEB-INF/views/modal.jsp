@@ -8,7 +8,7 @@
     <div class="modal-section separador-contenido-top separador-contenido-botton">
     	<div class="input-informacion margin-bottom">
         	<div class="contenedor-label-form ">
-            	<label for="tipoBici" class="label-form" >Tipo De Bicicleta:</label>
+            	<label for="tipoBici" class="label-form" >Tipo De Bicicleta </label>
             </div>
             <div class="contenedor-input-form ">
             	<input type="text" name="tipoBicicleta" id="tipoBici" class="input-form">
@@ -16,17 +16,17 @@
         </div>
         <div class="input-informacion margin-bottom ">
         	<div class="contenedor-label-form">
-            	<label for="descripcion" class="label-form" >Descripción:</label>
+            	<label for="descripcion" class="label-form" >Descripción </label>
             </div>
-            <div class="contenedor-input-form">
-            	<input type="text" name="descripcion" id="descripcion" class="input-form" >
+			<div class="contenedor-input-form ">
+            	<textarea rows="4" cols="50"></textarea>
             </div>
         </div>
     </div>
       <div class="modal-foter">
       	<div class="contenido-botones-foter">
-        	<button class="modal-action modal-close waves-effect waves-green btn-cancelar" >Cancelar</button>
-            <button  class="modal-action modal-close waves-effect waves-green btn-ok" id="ok">Ok</button>
+        	<button class="modal-action modal-close waves-effect waves-green btn-cancelar">Cancelar</button>
+            <button  class="modal-action modal-close waves-effect waves-green btn-ok">Guardar</button>
         </div>
       </div>
  </div>

@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.cmancode.project.exceptions.InstanceNotFoundException;
 
 
-public class GenericDAOImpl<E, PK extends Serializable> implements GenericDAO<E, PK> {
+public class GenericDAOImpl<E, PK extends Serializable> implements IGenericDAO<E, PK> {
 	
 	
 	@Autowired

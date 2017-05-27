@@ -14,7 +14,6 @@ public class BicicletaDAOImpl extends GenericDAOImpl<Bicicleta, String> implemen
 	public List<Bicicleta> listaBici(String placa) throws InstanceNotFoundException {
 		List<Bicicleta> bicicletas = (List<Bicicleta>) getSession().createQuery("SELECT b FROM Bicicleta b WHERE b.placa = :placa")
 									.setParameter("placa", placa).list();
-		
 		if(bicicletas.isEmpty()){
 			throw new InstanceNotFoundException(placa, Bicicleta.class.getName());
 		}else{

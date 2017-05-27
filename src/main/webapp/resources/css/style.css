@@ -1,3 +1,17 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+hr{
+	border-left: none;
+	border-bottom: none;
+	border-right: none;
+	padding: 15px 15px;
+}
+#logo{
+	font-size: 29px;
+	font-weight: 900;
+}
 button, input {
     outline: 0px;
 }
@@ -17,9 +31,12 @@ header, main, footer {
 }
 
 body {
+	font-family: 'Roboto', sans-serif;
     background-color: #F8F8F8;
 }
-
+#slide-out li a{
+	font-size: 16px;
+}
 ul[class*="side-nav"] {
     width: 220px;
 }
@@ -31,6 +48,24 @@ ul[class*="side-nav"] {
 .separador-contenido-botton {
     margin-bottom: 20px;
 }
+
+/*---------------Menu----------------------------*/
+#slide-out li > a, #slide-out li ul a{
+	color: #fff;
+	padding: 7px 15px;
+}
+#slide-out ul{
+	display: none;
+}
+#slide-out li ul{ /*Fondo de los sub-menus*/
+	background: #1408FF;
+	color: #fff;
+}
+
+#slide-out{
+	background: #1C0082 !important;
+}
+/*------------Fin Menu---------------------------*/
 
 /* ------------ input buscar ; botones de agregar, buscar  ------------------------*/
 .botton-agregar {
@@ -133,7 +168,7 @@ tbody > tr:hover{
     color: #666;
 }
 
-/* modal ----------------------------------------------*/
+/* modals ----------------------------------------------*/
 
 .modal-header{
     border-bottom: 1px solid #f4f4f4;
@@ -149,6 +184,9 @@ tbody > tr:hover{
     justify-content: flex-end;
 }
 
+div#modal-usuario {
+    width: 68%;
+}
 .btn-ok{
     border: none;
     margin: 0;
@@ -180,7 +218,7 @@ tbody > tr:hover{
     width: 30%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .contenedor-input-form {
@@ -192,7 +230,7 @@ tbody > tr:hover{
     color: #666;
 }
 
-.label-form::before {
+.label-form::after {
     content: "*";
     color: #F0415B;
     margin-right: 5px;
@@ -215,4 +253,23 @@ tbody > tr:hover{
 
 .input-form:hover {
     border-color: #108ee9;
+}
+
+/*---------Estilos Bicicleta------------------*/
+select.input-form{
+	width: 78%;
+	height: 2.39rem;
+}
+/*----------------Estos Multas -------------------*/
+
+textarea {
+    height: 3rem;
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    padding: 8px 10px;
+    margin: 0;
+    color: #666;
+    border-radius: 3px;
+    width: 70%;
+    background-color: #fff;
 }
