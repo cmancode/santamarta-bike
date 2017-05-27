@@ -44,8 +44,6 @@ public class Bicicleta {
 	@OneToMany(mappedBy = "bicicleta", cascade = CascadeType.ALL)
 	private Set<Entrega> entrega;
 	
-	
-	
 	public Set<Mantenimiento> getManetenimiento() {
 		return manetenimiento;
 	}

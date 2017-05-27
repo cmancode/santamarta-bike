@@ -42,10 +42,9 @@
             <div class="contenedor-input-form">
             	<select class="input-form" id="txt-sitio">
             		<option value = "-1">Seleccionar...</option>
-            		<option value = "1">Sítio 1</option>
-            		<option value = "2">Sítio 2</option>
-            		<option value = "3">Sítio 3</option>
-            		<option value = "4">Sítio 4</option>
+            		<c:forEach var="sitios" items="${sities}">
+            			<option value = "${sitios.idSitio}">${sitios.nombre}</option>
+            		</c:forEach>
             	</select>
             </div>
         </div>
@@ -63,9 +62,9 @@
         </div>
     </div>
       <div class="modal-foter">
-      	<div class="contenido-botones-foter">
+      	<div id="cambiar-btns" class="contenido-botones-foter">
         	<button class="modal-action modal-close waves-effect waves-green btn-cancelar">Cancelar</button>
-            <button  class="modal-action modal-close waves-effect waves-green btn-ok">Guardar</button>
+            <button id="guardar-bici" class="modal-action modal-close waves-effect waves-green btn-ok">Guardar Registro</button>
         </div>
       </div>
  </div>

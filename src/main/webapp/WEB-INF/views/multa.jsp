@@ -15,6 +15,8 @@
 	    	<div class="row contenido">
 	        	<div class="col s12 white">
 	            	<div class="col s12 separador-contenido-top">
+	            	<h5>Administración - Multas</h5>
+	            	<hr>
 	                	<div class="col  s12 m6 l6  margin-bottom">
 	                    	<input type="text" name="" value="" class="input-buscar" placeholder="Palabra clave">
 	                        <button type="button" name="button" class="boton-buscar ">Buscar</button>

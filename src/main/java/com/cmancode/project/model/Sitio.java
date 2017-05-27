@@ -35,6 +35,7 @@ public class Sitio {
 	@Column(nullable =  true)
 	private String foto;
 	
+	@JsonIgnore
 	@OneToOne(mappedBy = "sitio")
 	private Localizacion localizacion;
 	

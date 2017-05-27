@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.cmancode.project.exceptions.InstanceNotFoundException;
 
-public interface GenericDAO <E, PK extends Serializable>{
+public interface IGenericDAO <E, PK extends Serializable>{
 
 	void save(E entity);
 

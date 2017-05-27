@@ -1,3 +1,17 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+hr{
+	border-left: none;
+	border-bottom: none;
+	border-right: none;
+	padding: 15px 15px;
+}
+#logo{
+	font-size: 29px;
+	font-weight: 900;
+}
 button, input {
     outline: 0px;
 }
@@ -17,9 +31,12 @@ header, main, footer {
 }
 
 body {
+	font-family: 'Roboto', sans-serif;
     background-color: #F8F8F8;
 }
-
+#slide-out li a{
+	font-size: 16px;
+}
 ul[class*="side-nav"] {
     width: 220px;
 }
@@ -31,6 +48,24 @@ ul[class*="side-nav"] {
 .separador-contenido-botton {
     margin-bottom: 20px;
 }
+
+/*---------------Menu----------------------------*/
+#slide-out li > a, #slide-out li ul a{
+	color: #fff;
+	padding: 7px 15px;
+}
+#slide-out ul{
+	display: none;
+}
+#slide-out li ul{ /*Fondo de los sub-menus*/
+	background: #1408FF;
+	color: #fff;
+}
+
+#slide-out{
+	background: #1C0082 !important;
+}
+/*------------Fin Menu---------------------------*/
 
 /* ------------ input buscar ; botones de agregar, buscar  ------------------------*/
 .botton-agregar {
