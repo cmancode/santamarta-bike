@@ -7,5 +7,10 @@ import com.cmancode.project.model.TipoBicicleta;
 
 public interface ITipoBiciDAO extends GenericDAO<TipoBicicleta, Long>{
 	
-	public List<TipoBicicleta> tiposBici(Long id) throws InstanceNotFoundException;
+	public List<TipoBicicleta> busquedaTiposBicicletas(String tipo) throws InstanceNotFoundException;
+	
+	public TipoBicicleta tipoBicicleta(String tipo) throws InstanceNotFoundException;
+	
+	public boolean tipoBicicletaExiste(String tipo) throws InstanceNotFoundException;
+	
 }
