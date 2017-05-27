@@ -1,2 +1,3 @@
 src/main/resources/application.properties
 !.gitignore
+target/classes/com/cmancode/project/*
