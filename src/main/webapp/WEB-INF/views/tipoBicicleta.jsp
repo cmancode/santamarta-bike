@@ -28,7 +28,7 @@
 	                <div class="col s12 separador-contenido-top">
 	                	<div class="col s12">
 	                    	<div class="contendenor-tabla separador-contenido-botton">
-	                        	<table>
+	                        	<table id="tabla-tipoBicicleta">
 	                            	<thead>
 	                                	<tr >
 	                                    	<th>Tipo Bicicleta</th>
