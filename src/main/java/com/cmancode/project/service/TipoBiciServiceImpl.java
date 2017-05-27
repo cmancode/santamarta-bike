@@ -36,7 +36,20 @@ public class TipoBiciServiceImpl implements ITipoBiciService {
 		
 		return tipos;
 	}
+	
 
+	@Override
+	public TipoBicicleta tipoById(Long id) {
+		TipoBicicleta tipoBici = null;
+		
+		try {
+			tipoBici = tipoDao.find(id);
+		} catch (InstanceNotFoundException e) {
+			e.printStackTrace();
+		}
+		return tipoBici;
+	}
+	
 	@Override
 	@Transactional
 	public void editarTipo(TipoBicicleta tipoBici) {
@@ -63,16 +76,43 @@ public class TipoBiciServiceImpl implements ITipoBiciService {
 		return tipoDao.exists(id);
 	}
 
+	
 	@Override
-	public TipoBicicleta tipoById(Long id) {
+	public List<TipoBicicleta> listaBusquedaTiposBicicletas(String tipo)  {
+		List<TipoBicicleta> tiposBicicletas = null;
+		
+		try {
+			tiposBicicletas = tipoDao.busquedaTiposBicicletas(tipo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return tiposBicicletas;
+		
+	}
+	
+
+	public TipoBicicleta tipoBicicleta(String tipo){
 		TipoBicicleta tipoBici = null;
 		
 		try {
-			tipoBici = tipoDao.find(id);
+			tipoBici = tipoDao.tipoBicicleta(tipo);
 		} catch (InstanceNotFoundException e) {
 			e.printStackTrace();
 		}
+		
 		return tipoBici;
+	}
+	
+	public boolean tipoBicicletaExisteNombre(TipoBicicleta tipoBicicleta){
+		boolean valor = true;
+		String tipo = tipoBicicleta.getTipo();
+		try{
+			valor = tipoDao.tipoBicicletaExiste(tipo);
+		} catch (InstanceNotFoundException e){
+			e.printStackTrace();			
+		}
+		return valor;
 	}
 
 }

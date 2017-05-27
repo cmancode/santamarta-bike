@@ -26,7 +26,7 @@
         </li>
         <li class="sub-menu"><a href="#" class="">Tipos de Bicicletas</a>
        		<ul class="">
-       			<a href="tipobici" class="">Administrar Tipos</a>
+       			<a href="tipoBicicleta" class="">Administrar Tipos</a>
        		</ul>
         </li>
         <li class="sub-menu"><a href="#"  class="">Bicicletas</a>

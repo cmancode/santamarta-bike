@@ -16,50 +16,44 @@
 	        	<div class="col s12 white">
 	            	<div class="col s12 separador-contenido-top">
 	                	<div class="col  s12 m6 l6  margin-bottom">
-	                    	<input type="text" name="" value="" class="input-buscar" placeholder="Tipo De Bicicleta">
-	                        <button type="button" name="button" class="boton-buscar ">Buscar</button>
+	                    	<input type="text" name="" value="" class="input-buscar" placeholder="Tipo De Bicicleta" id="textTipoBicicleta">
+	                        <button type="button" name="button" class="boton-buscar " id="buscarTipoBicicleta">Buscar</button>
 	                    </div>
 	                    <div class="col s12.left m6 l6 margin-bottom">
 	                    	<div class="right">
-	                        	<button type="button" name="button" class="botton-agregar" data-target="modal1">Agregar Tipo Bicicleta</button>
+	                        	<button type="button" name="button" class="botton-agregar" data-target="modal1" id="agregar">Agregar Tipo Bicicleta</button>
 	                        </div>
 	                    </div>
 	                </div>
 	                <div class="col s12 separador-contenido-top">
 	                	<div class="col s12">
 	                    	<div class="contendenor-tabla separador-contenido-botton">
-	                        	<table>
+	                        	<table id="tabla-tipoBicicleta">
 	                            	<thead>
-	                                	<tr>
+	                                	<tr >
 	                                    	<th>Tipo Bicicleta</th>
 	                                        <th>Descripción</th>
 	                                        <th>Acción</th>
 	                                        <th>Acción</th>
 	                                    </tr>
 	                                </thead>
-	                                <tbody>
-	                                	<tr>
-	                                    	<td>Alvin</td>
-	                                        <td>Eclair</td>
-	                                        <td><input type="button" name="actualizar" class="btn-actualizar btn-accion" value="Actualizar"></td>
-	                                        <td><input type="button" name="eliminar" class="btn-eliminar btn-accion"  value="Eliminar"></td>
-	                                    </tr>
-	                                    <tr>
-	                                    	<td>Alan</td>
-	                                       	<td>Jellybean</td>
-	                                        <td><input type="button" name="actualizar" class="btn-actualizar btn-accion" value="Actualizar"></td>
-	                                        <td><input type="button" name="eliminar" class="btn-eliminar btn-accion"  value="Eliminar"></td>
-	                                    </tr>
-	                                    <tr>
-	                                    	<td>Jonathan</td>
-	                                        <td>Lollipop</td>
-	                                        <td><input type="button" name="actualizar" class="btn-actualizar btn-accion" value="Actualizar"></td>
-	                                        <td><input type="button" name="eliminar" class="btn-eliminar btn-accion"  value="Eliminar"></td>
-	                                    </tr>
+	                                <tbody id="cuerpoTabla">
+	                                	<%! int i = 0;%>
+	                                	<c:forEach var="tipoB" items="${tiposbicicleta}">
+	                                		<% i = i + 1; %>
+	                                		<tr data-id="${tipoB.idTipoBici}"> 
+	                                			<td>${tipoB.tipo}</td>
+	                                			<td>${tipoB.descripcion}</td>
+	                                			<td><input type='button' name='actualizar' class='btn-actualizar btn-accion' value='Editar' data-target="modal1" ></td>
+                   								<td><input type='button' name='eliminar' class='btn-eliminar btn-accion'  value='Eliminar'></td>
+	                                		</tr>
+	                                	</c:forEach>
+	                                	
 	                                </tbody>
 	                          	</table>
 	                   			<div class="contenedor-total-res">
-	                            	<p>Total <span>3</span> Registros </p>
+	                            	<p>Total <span id="cantidadElementos"><%=i%></span> Registros </p>
+	                            	<% i = 0; %>
 	                            </div>
 	                     	</div>
 	                  	</div>
@@ -71,6 +65,6 @@
 	    
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script src="resources/js/index.js"></script>
+        <script src="resources/js/tipoBicicleta.js"></script>
 	</body>	      	
 </html>
