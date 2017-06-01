@@ -14,6 +14,7 @@ $(function(){
 	
 	accion();
 	buscarSitio();
+	urlAvatar();
 });
 
 function accion(){
@@ -78,13 +79,14 @@ function cambiarGuardarModal(){
 function actualizarSitio(){
 	console.log("actualizando tipoB");
 	vSitio     = $('#sitio');
+	vFoto	   = $('#file_1');
 	vlatitud   = $('#latitud');
 	vlongitud  = $('#longitud');
 	vDireccion = $('#direccion');
 	
 	var sitio = {
 		nombre  : vSitio.val(),
-		foto	: vDireccion.val()+'img.jpg',
+		foto	: vFoto.val(),
 		lat		: vlatitud.val(),
 		lng		: vlongitud.val(),
 		direccion : vDireccion.val()
@@ -126,6 +128,7 @@ function actualizarSitio(){
 function crearSitio(){
 	console.log("creando tipoB");
 	vSitio     = $('#sitio');
+	vFoto	   = $('#file_1');
 	vLatitud   = $('#latitud');
 	vLongitud  = $('#longitud');
 	vDireccion = $('#direccion');
@@ -133,7 +136,7 @@ function crearSitio(){
 	
 	var sitio = {
 		nombre  : vSitio.val() ,
-		foto    : vDireccion.val() + 'img.jpg',
+		foto    : vFoto.val(),
 		lat		: vLatitud.val(),
 		lng		: vLongitud.val(),
 		direccion : vDireccion.val()
@@ -217,6 +220,14 @@ function borradoFormulario(){
 	vLatitud.val(' ');
 	vLongitud.val(' ');
 	vDireccion.val(' ');
+	$('#inputval').text(' ');
+}
+
+function urlAvatar(){
+	 $('#file_1').on('change',function(){
+		 $('#inputval').text( $(this).val());
+	 });
+	 
 }
 	
 	
