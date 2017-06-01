@@ -8,18 +8,42 @@
     <div class="modal-section separador-contenido-top separador-contenido-botton">
     	<div class="input-informacion margin-bottom">
         	<div class="contenedor-label-form ">
-            	<label for="tipoBici" class="label-form" >Tipo De Bicicleta </label>
+            	<label for="sitio" class="label-form" >Sitio </label>
             </div>
             <div class="contenedor-input-form ">
-            	<input type="text" name="tipoBicicleta" id="tipoBici" class="input-form">
+            	<input type="text" name="sitio" id="sitio" class="input-form">
             </div>
         </div>
-        <div class="input-informacion margin-bottom ">
-        	<div class="contenedor-label-form">
-            	<label for="descripcion" class="label-form" >Descripción </label>
+           	<div class="input-informacion margin-bottom">
+        	<div class="contenedor-label-form ">
+            	<label for="avatar" class="label-form" >Avatar </label>
             </div>
-			<div class="contenedor-input-form ">
-            	<textarea id="descripcion" rows="4" cols="50"></textarea>
+            <div class="contenedor-input-form ">
+            	<input type="file" name="avatar" id="avatar">
+            </div>
+        </div>
+           	<div class="input-informacion margin-bottom">
+        	<div class="contenedor-label-form ">
+            	<label for="latitud" class="label-form" >Latitud </label>
+            </div>
+            <div class="contenedor-input-form ">
+            	<input type="text" name="latitud" id="latitud" class="input-form">
+            </div>
+        </div>
+           	<div class="input-informacion margin-bottom">
+        	<div class="contenedor-label-form ">
+            	<label for="longitud" class="label-form" >Longuitud </label>
+            </div>
+            <div class="contenedor-input-form ">
+            	<input type="text" name="longitud" id="longitud" class="input-form">
+            </div>
+        </div>
+           	<div class="input-informacion margin-bottom">
+        	<div class="contenedor-label-form ">
+            	<label for="direccion" class="label-form" >Dirección </label>
+            </div>
+            <div class="contenedor-input-form ">
+            	<input type="text" name="direccion" id="direccion" class="input-form">
             </div>
         </div>
     </div>
