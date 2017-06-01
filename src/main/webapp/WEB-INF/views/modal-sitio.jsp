@@ -1,6 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!-- modal tipo bicicleta -->
+<!-- modal sitio -->
 <div id="modal1" class="modal">
 	<div class="modal-header">
     	<span>Crear Sitios</span>
@@ -19,7 +19,11 @@
             	<label for="avatar" class="label-form" >Avatar </label>
             </div>
             <div class="contenedor-input-form ">
-            	<input type="file" name="avatar" id="avatar">
+            	<div class="input__row uploader">
+   					 <div id="inputval" class="input-value"></div>
+    				 <label for="file_1"></label>
+   					 <input id="file_1" class="upload" type="file">
+				</div>
             </div>
         </div>
            	<div class="input-informacion margin-bottom">
