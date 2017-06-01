@@ -1,6 +1,7 @@
 $(function(){
 	reiniciar();
 	guardarUsuario();
+	buscarPorId();
 });
 
 
@@ -75,5 +76,50 @@ guardarUsuario = function(){
 			solicitud.fail(function(jqXHR, textStatus) {
 				alert(jqXHR.status);
 			});
+	});
+}
+
+buscarPorId = function(){
+	$('.boton-buscar').on('click', function(events){
+		events.preventDefault();
+		
+		var txtId = $('#txt-id').val();
+		var lblRoles = $('#lbl-roles');
+		var lblTipoDoc = $('#lbl-tipo-doc');
+		var lblNumDoc = $('#lbl-identificacion');
+		var lblNombres = $('#lbl-nombres');
+		var lblPapellido = $('#lbl-papellido');
+		var lblSapellido = $('#lbl-sapellido');
+		var lblCorreo = $('#lbl-correo');
+		var lblCiudad = $('#lbl-ciudad');
+		var lblDireccion = $('#lbl-direccion');
+		var lblTelefono = $('#lbl-telefono');
+		var lblEstado = $('#lbl-estado');
+		
+		console.log(txtId);
+		var solicitud = $.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "usuario/"+txtId,
+		});
+		solicitud.done(function(datosRecibidos){
+			console.log(datosRecibidos);
+			jQuery.each(datosRecibidos.rol, function(i, rol){
+				lblRoles.text(rol.rol+",");
+			});
+			lblTipoDoc.text(datosRecibidos.tipoDoc);
+			lblNumDoc.text(datosRecibidos.cedula);
+			lblNombres.text(datosRecibidos.nombres);
+			lblPapellido.text(datosRecibidos.pApellido);
+			lblSapellido.text(datosRecibidos.sApellido);
+			lblCorreo.text(datosRecibidos.email);
+			lblCiudad.text(datosRecibidos.ciudadResidencia);
+			lblDireccion.text(datosRecibidos.dirResidencia);
+			lblTelefono.text(datosRecibidos.telf);
+			lblEstado.text(datosRecibidos.estado);
+		});
+		solicitud.fail(function(jqXHR, textStatus){
+			alert("error "+ jqXHR.status);
+		});
 	});
 }

@@ -77,7 +77,6 @@ public class BicicletaController {
 		if(bicicleta == null){
 			return new ResponseEntity<Bicicleta>(HttpStatus.NOT_FOUND);
 		}
-		System.out.println("Resultado Ok");
 		return new ResponseEntity<Bicicleta>(bicicleta, HttpStatus.OK);
 	}
 
