@@ -8,7 +8,7 @@ public interface IUsuarioService {
 	
 	public void guardarUsuario(Usuario usuario);
 	public void ActualizarUsuario(Usuario usuario);
-	public Usuario buscarPorId(Long id);
+	public Usuario buscarPorId(String id);
 	public List<Usuario> listaUsuaios();
 	public boolean existencia(Usuario usuario);
 	

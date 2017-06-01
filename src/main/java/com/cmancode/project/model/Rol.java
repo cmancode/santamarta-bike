@@ -19,7 +19,7 @@ public class Rol {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long idRol;
 	@Column(nullable = false, length = 30)
 	private String rol;
 	@JsonIgnore
@@ -33,11 +33,13 @@ public class Rol {
 	public void setUsuario(Set<Usuario> usuario) {
 		this.usuario = usuario;
 	}
-	public Long getId() {
-		return id;
+
+	
+	public Long getIdRol() {
+		return idRol;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdRol(Long idRol) {
+		this.idRol = idRol;
 	}
 	public String getRol() {
 		return rol;

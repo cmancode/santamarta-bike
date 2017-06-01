@@ -54,7 +54,7 @@ public class BicicletaController {
 	
 	@RequestMapping(value = "/new-bici", method = RequestMethod.POST)
 	public ResponseEntity<Bicicleta> crearBici (@RequestBody Bicicleta bicicleta, UriComponentsBuilder ucBuilder){		
-		
+
 		if(bicicleta.getPlaca() != null && biciService.existeBici(bicicleta)){
 			return new ResponseEntity<Bicicleta>(HttpStatus.CONFLICT);
 		}

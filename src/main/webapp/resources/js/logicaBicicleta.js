@@ -12,7 +12,7 @@ limpiar = function(){
 		event.preventDefault();
 		
 		$('#cambiar-btns').html("<button class='modal-action modal-close waves-effect waves-green btn-cancelar'>Cancelar</button>"+
-		"<button id='guardar-bici' class='modal-action modal-close waves-effect waves-green btn-ok'>Guardar Registro</button>");
+		"<button id='guardar-bici' class='modal-action modal-close waves-effect waves-green btn-ok'><i class='fa fa-floppy-o' aria-hidden='true'></i> Guardar Registro</button>");
 		
 		$('#txt-placa').val("");
 		$('#txt-color').val("");
