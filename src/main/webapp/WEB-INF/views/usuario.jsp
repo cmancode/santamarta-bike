@@ -53,7 +53,7 @@
 	                                        <td>${lUsuarios.pApellido}</td>
 	                                        <td>${lUsuarios.sApellido}</td>
 	                                        <td>${lUsuarios.email}</td>
-	                                        <td>--</td>
+	                                        <td>hacer luego</td>
 	                                        <td><input type="button" name="actualizar" class="btn-actualizar btn-accion" value="Actualizar"></td>
 	                                    </tr>
 	                               	</c:forEach>
@@ -68,7 +68,7 @@
 	          	</div>
 	       	</div>
 	    </main> 
-	    
+	 
 	    <%@ include file="modal-usuario.jsp" %>
 	    
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

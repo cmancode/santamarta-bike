@@ -16,6 +16,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.FetchMode;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -56,7 +58,7 @@ public class Usuario {
 	@Column(name = "pass", nullable = false, length = 25)
 	private String password;
 	
-	@ManyToMany(cascade = {CascadeType.ALL})
+	@ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER )
 	@JoinTable(name = "ROLES_USUARIOS",
 			joinColumns = {@JoinColumn(name = "id_usuario")},
 			inverseJoinColumns = {@JoinColumn(name = "id_rol")})
