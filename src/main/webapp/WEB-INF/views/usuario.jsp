@@ -24,7 +24,7 @@
 	                    </div>
 	                    <div class="col s12.left m6 l6 margin-bottom">
 	                    	<div class="right">
-	                        	<button type="button" name="button" class="botton-agregar" data-target="modal-usuario">Agregar Nuevo Usuario</button>
+	                        	<button id="call-modal" type="button" name="button" class="botton-agregar" data-target="modal-usuario">Agregar Nuevo Usuario</button>
 	                        </div>
 	                    </div>
 	                </div>
@@ -53,7 +53,11 @@
 	                                        <td>${lUsuarios.pApellido}</td>
 	                                        <td>${lUsuarios.sApellido}</td>
 	                                        <td>${lUsuarios.email}</td>
-	                                        <td>--</td>
+	                                        <td>
+	                                        <c:forEach var="roles" items="${lUsuarios.rol.toArray()}">
+	                                        	${roles.rol}
+	                                        </c:forEach>
+	                                        </td>
 	                                        <td><input type="button" name="actualizar" class="btn-actualizar btn-accion" value="Actualizar"></td>
 	                                    </tr>
 	                               	</c:forEach>

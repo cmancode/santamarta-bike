@@ -13,7 +13,7 @@
 		            	<label for="tipo-doc" class="label-form" >Tipo Documento </label>
 		            </div>
 		            <div class="contenedor-input-form ">
-		            	<select class="input-form">
+		            	<select id="txt-tipo-doc" class="input-form">
 		            		<option value = "-1">Seleccionar...</option>
 		            		<option value = "Cédula Ciudadanía">Cédula Ciudadanía</option>
 		            		<option value = "Tarjeta de Identidad">Tarjeta de Identidad</option>
@@ -33,7 +33,7 @@
 		            	<label for="nombres" class="label-form" >Nombres </label>
 		            </div>
 		            <div class="contenedor-input-form ">
-		            	<input type="text" name="nombres" id="txt-numbres" class="input-form">
+		            	<input type="text" name="nombres" id="txt-nombres" class="input-form">
 		            </div>
 		        </div>
 		    	<div class="input-informacion margin-bottom">
@@ -119,10 +119,10 @@
 		            	<label for="esat" class="label-form" >Estado </label>
 		            </div>
 		            <div class="contenedor-input-form ">
-		            	<select class="input-form">
+		            	<select id="txt-estado-user" class="input-form">
 		            		<option value = "-1">Seleccionar...</option>
-		            		<option value = "Cédula Ciudadanía">ACTIVO</option>
-		            		<option value = "Tarjeta de Identidad">INACTIVO</option>
+		            		<option value = "ACTIVO">ACTIVO</option>
+		            		<option value = "INACTIVO">INACTIVO</option>
 		            	</select>
 		            </div>
 		        </div>
@@ -133,11 +133,11 @@
 		            	<label for="esat" class="label-form" >Funciones </label>
 		            </div>
 		            <div class="contenedor-input-form ">
-		            	<select class="input-form">
+		            	<select id="txt-funciones" class="input-form">
 		            		<option value = "-1">Seleccionar...</option>
-		            		<option value = "Cédula Ciudadanía">ADMINISTRADOR</option>
-		            		<option value = "Tarjeta de Identidad">FUNCIONARIO</option>
-		            		<option value = "Tarjeta de Identidad">USUARIO</option>
+		            		<option value = "1">ADMINISTRADOR</option>
+		            		<option value = "2">FUNCIONARIO</option>
+		            		<option value = "3">USUARIO</option>
 		            	</select>
 		            </div>
 		        </div>
@@ -145,7 +145,7 @@
 		</div>
     </div>
       <div class="modal-foter">
-      	<div class="contenido-botones-foter">
+      	<div id="container-buttons-user" class="contenido-botones-foter">
         	<button class="modal-action modal-close waves-effect waves-green btn-cancelar">Cancelar</button>
             <button  class="modal-action modal-close waves-effect waves-green btn-ok">Guardar</button>
         </div>

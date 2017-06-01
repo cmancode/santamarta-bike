@@ -23,11 +23,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Usuario {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
 	@Column(unique = true, nullable = false, length = 12)
-	private String cedula;
+	private String idCedula;
 	
 	@Column(name = "tiopo_documento", nullable = false, length = 20)
 	private String tipoDoc;
@@ -56,7 +53,7 @@ public class Usuario {
 	@Column(name = "pass", nullable = false, length = 25)
 	private String password;
 	
-	@ManyToMany(cascade = {CascadeType.ALL})
+	@ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@JoinTable(name = "ROLES_USUARIOS",
 			joinColumns = {@JoinColumn(name = "id_usuario")},
 			inverseJoinColumns = {@JoinColumn(name = "id_rol")})
@@ -69,17 +66,11 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
 	private Set<Entrega> entraga;
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getCedula() {
-		return cedula;
+		return idCedula;
 	}
-	public void setCedula(String cedula) {
-		this.cedula = cedula;
+	public void setCedula(String idCedula) {
+		this.idCedula = idCedula;
 	}
 	public String getTipoDoc() {
 		return tipoDoc;

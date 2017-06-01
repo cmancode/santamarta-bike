@@ -32,7 +32,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
 	@Override
 	@Transactional
-	public Usuario buscarPorId(Long id) {
+	public Usuario buscarPorId(String id) {
 		Usuario usuario = null;
 		try {
 			usuario = usuarioDAO.find(id);
@@ -57,7 +57,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	@Override
 	@Transactional
 	public boolean existencia(Usuario usuario) {
-		Long id = new Long(usuario.getId());
+		String id = new String(usuario.getCedula());
 		boolean existio;
 		existio = usuarioDAO.exists(id);		
 		return existio;

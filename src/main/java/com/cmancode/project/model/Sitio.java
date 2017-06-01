@@ -35,9 +35,14 @@ public class Sitio {
 	@Column(nullable =  true)
 	private String foto;
 	
-	@JsonIgnore
-	@OneToOne(mappedBy = "sitio")
-	private Localizacion localizacion;
+	@Column(nullable = false)
+	private Long lat;
+	
+	@Column(nullable = false)
+	private Long lng;
+	
+	@Column(nullable = true, length = 60)
+	private String direccion;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "idSitio", cascade = CascadeType.ALL)
@@ -61,12 +66,6 @@ public class Sitio {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	public Localizacion getLocalizacion() {
-		return localizacion;
-	}
-	public void setLocalizacion(Localizacion localizacion) {
-		this.localizacion = localizacion;
 	}
 	public String getFoto() {
 		return foto;
