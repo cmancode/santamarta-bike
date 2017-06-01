@@ -16,25 +16,26 @@
 	        	<div class="col s12 white">
 	            	<div class="col s12 separador-contenido-top">
 	                	<div class="col  s12 m6 l6  margin-bottom">
-	                    	<input type="text" name="" value="" class="input-buscar" placeholder="Tipo De Bicicleta" id="textTipoBicicleta">
-	                        <button type="button" name="button" class="boton-buscar " id="buscarTipoBicicleta">Buscar</button>
+	                    	<input type="text" name="" value="" class="input-buscar" placeholder="sitio" id="textSitio">
+	                        <button type="button" name="button" class="boton-buscar " id="buscarSitio">Buscar</button>
 	                    </div>
 	                    <div class="col s12.left m6 l6 margin-bottom">
 	                    	<div class="right">
-	                        	<button type="button" name="button" class="botton-agregar" data-target="modal1" id="agregar">Agregar Tipo Bicicleta</button>
+	                        	<button type="button" name="button" class="botton-agregar" data-target="modal1" id="agregar">Agregar Sitio</button>
 	                        </div>
 	                    </div>
 	                </div>
 	                <div class="col s12 separador-contenido-top">
 	                	<div class="col s12">
 	                    	<div class="contendenor-tabla separador-contenido-botton">
-	                        	<table id="tabla-tipoBicicleta">
+	                        	<table id="tabla-sitio">
 	                            	<thead>
 	                                	<tr >
 	                                    	<th>Sitio</th>
 	                                        <th>Avatar</th>
 	                                        <th>Latitud</th>
-	                                        <th>Longitude</th>
+	                                        <th>Longitud</th>
+	                                        <th>Dirección</th>
 	                                        <th>Acción</th>
 	                                        <th>Acción</th>
 	                                    </tr>
@@ -46,8 +47,9 @@
 	                                		<tr data-id="${sitio.idSitio}"> 
 	                                			<td>${sitio.nombre}</td>
 	                                			<td>${sitio.foto}</td>
-	                                			<td>121121</td>
-	                                			<td>992192</td>
+	                                			<td>${sitio.lat}</td>
+	                                			<td>${sitio.lng}</td>
+	                                			<td>${sitio.direccion}</td>
 	                                			<td><input type='button' name='actualizar' class='btn-actualizar btn-accion' value='Editar' data-target="modal1" ></td>
                    								<td><input type='button' name='eliminar' class='btn-eliminar btn-accion'  value='Eliminar'></td>
 	                                		</tr>
@@ -69,6 +71,6 @@
 	    
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script src="resources/js/tipoBicicleta.js"></script>
+        <script src="resources/js/sitio.js"></script>
 	</body>	      	
 </html>
