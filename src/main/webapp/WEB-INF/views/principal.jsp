@@ -42,7 +42,10 @@
 	        </li>
 	        <li class="sub-menu"><a href="#" class=""><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
 	       		<ul>
-	       			<a href="usuarios" class="">Administrar Uauarios</a>
+	       			<a href="usuarios" class="">Administrar Usuarios</a>
+	       		</ul>
+	       		<ul>
+	       			<a href="usuarios-id" class="">Consultar Usuarios</a>
 	       		</ul>
 	    	</li>
 	        <li class="sub-menu"><a href="#" class=""><i class="fa fa-globe" aria-hidden="true"></i> Puntos de Retorno</a>
