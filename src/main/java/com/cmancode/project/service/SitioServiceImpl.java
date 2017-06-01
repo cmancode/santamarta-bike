@@ -65,6 +65,42 @@ public class SitioServiceImpl implements ISitioService{
 		return existio;
 	}
 	
+	@Override
+	public List<Sitio> listaBusquedaSitios(String sitio)  {
+		List<Sitio> sitios = null;
+		
+		try {
+			sitios = sitioDao.busquedaSitios(sitio);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return sitios;
+		
+	}
 	
+
+	public Sitio sitio(String sit){
+		Sitio sitio = null;
+		
+		try {
+			sitio = sitioDao.sitio(sit);
+		} catch (InstanceNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		return sitio;
+	}
+
+	public boolean sitioExisteNombre(Sitio sitio){
+		boolean valor = true;
+		String nombre = sitio.getNombre();
+		try{
+			valor = sitioDao.sitioExiste(nombre);
+		} catch (InstanceNotFoundException e){
+			e.printStackTrace();			
+		}
+		return valor;
+	}
 	
 }
