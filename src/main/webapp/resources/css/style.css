@@ -48,7 +48,7 @@ button, input {
 }
 
 header, main, footer {
-  padding-left: 220px;
+  padding-left: 245px;
 }
 
 @media only screen and (max-width : 992px) {
