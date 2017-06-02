@@ -53,16 +53,9 @@
 	                                        <td>${lUsuarios.pApellido}</td>
 	                                        <td>${lUsuarios.sApellido}</td>
 	                                        <td>${lUsuarios.email}</td>
-<<<<<<< HEAD
-	                                        <td>hacer luego</td>
-=======
 	                                        <td>
-	                                        <c:forEach var="roles" items="${lUsuarios.rol.toArray()}">
-	                                        	${roles.rol}
-	                                        </c:forEach>
+	                                        <input type="button" name="actualizar" class="btn-actualizar btn-accion" value="Actualizar">
 	                                        </td>
->>>>>>> d648fd44bc1ea494df3daf3ce9e22ef513cdeaf0
-	                                        <td><input type="button" name="actualizar" class="btn-actualizar btn-accion" value="Actualizar"></td>
 	                                    </tr>
 	                               	</c:forEach>
 	                                </tbody>
@@ -83,5 +76,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
         <script src="resources/js/index.js"></script>
         <script src="resources/js/logicaUsuario.js"></script>
+        <script src="resources/js/menu.js"></script>
 	</body>	      	
 </html>
