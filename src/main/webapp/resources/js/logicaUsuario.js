@@ -71,7 +71,22 @@ guardarUsuario = function(){
 						dataType : 'json'
 					});
 			solicitud.done(function(datosRecibidos){
-				console.log(datosRecibidos);
+				var roles;
+				jQuery.each(datosRecibidos.rol, function(i, rol){
+					roles = rol.rol;
+				});
+				console.log(roles);
+				$('#table-usuarios').append(
+						"<tr>"+
+							 "<td>"+datosRecibidos.tipoDoc+"</td>"+
+							 "<td>"+datosRecibidos.cedula+"</td>"+
+							 "<td>"+datosRecibidos.nombres+"</td>"+
+							 "<td>"+datosRecibidos.pApellido+"</td>"+
+							 "<td>"+datosRecibidos.sApellido+"</td>"-
+							 "<td>"+datosRecibidos.email+"</td>"+
+							 "<td>"+roles+"</td>"+
+							 "<td><input type='button' name='actualizar' class='btn-actualizar btn-accion' value='Actualizar'></td>"+
+						"</tr>" );
 			});
 			solicitud.fail(function(jqXHR, textStatus) {
 				alert(jqXHR.status);
@@ -103,7 +118,6 @@ buscarPorId = function(){
 			url: "usuario/"+txtId,
 		});
 		solicitud.done(function(datosRecibidos){
-			console.log(datosRecibidos);
 			jQuery.each(datosRecibidos.rol, function(i, rol){
 				lblRoles.text(rol.rol+",");
 			});

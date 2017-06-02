@@ -31,7 +31,7 @@
 	                <div class="col s12 separador-contenido-top">
 	                	<div class="col s12">
 	                    	<div class="contendenor-tabla separador-contenido-botton">
-	                        	<table>
+	                        	<table id="table-usuarios">
 	                            	<thead>
 	                                	<tr>
 	                                    	<th>Tipo Documento</th>
@@ -53,15 +53,11 @@
 	                                        <td>${lUsuarios.pApellido}</td>
 	                                        <td>${lUsuarios.sApellido}</td>
 	                                        <td>${lUsuarios.email}</td>
-<<<<<<< HEAD
-	                                        <td>hacer luego</td>
-=======
 	                                        <td>
 	                                        <c:forEach var="roles" items="${lUsuarios.rol.toArray()}">
 	                                        	${roles.rol}
 	                                        </c:forEach>
 	                                        </td>
->>>>>>> d648fd44bc1ea494df3daf3ce9e22ef513cdeaf0
 	                                        <td><input type="button" name="actualizar" class="btn-actualizar btn-accion" value="Actualizar"></td>
 	                                    </tr>
 	                               	</c:forEach>

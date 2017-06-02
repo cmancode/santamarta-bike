@@ -25,7 +25,6 @@ public class SitioController {
 	@RequestMapping(value = "/sitios", method = RequestMethod.GET)
 	public ModelAndView listaSitios (ModelAndView model){
 		List<Sitio> sitios = sitioService.listSitios();
-		System.out.println(sitios.get(0) );
 		model.addObject("sitios", sitios);
 		model.setViewName("sitios");
 		return model;
@@ -67,7 +66,6 @@ public class SitioController {
 		sitioEditar.setLng(sitio.getLng());
 		sitioEditar.setDireccion(sitio.getDireccion());
 		
-
 		sitioService.editarSitio(sitioEditar);
 	
 		return new ResponseEntity<Sitio> (sitioEditar, HttpStatus.CREATED);
