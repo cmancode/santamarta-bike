@@ -73,6 +73,24 @@ public class Sitio {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+	public Long getLat() {
+		return lat;
+	}
+	public void setLat(Long lat) {
+		this.lat = lat;
+	}
+	public Long getLng() {
+		return lng;
+	}
+	public void setLng(Long lng) {
+		this.lng = lng;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
 	
 	
 	

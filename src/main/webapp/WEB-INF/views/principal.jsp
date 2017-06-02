@@ -1,13 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<html>
-<head>
-	 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-	 <link rel="stylesheet" href="resources/css/style.css">
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	 <script src="https://use.fontawesome.com/72fa6900c1.js"></script>
-     <script src="resources/js/menu.js"></script>
-</head>
 
 <header>
 	<nav class="top-nav white">
@@ -56,4 +48,3 @@
 		</ul>
   	</div>
 </header>
-</html>
