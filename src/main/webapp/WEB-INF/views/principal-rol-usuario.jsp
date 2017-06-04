@@ -17,9 +17,9 @@
 	    	<li id="li-container-logo" class="center-align">
 	        	<a  href="#" class=""><h5 id="logo">SM - Bike <i class="fa fa-bicycle" aria-hidden="true"></i></h5></a>
 	        </li>
-	        <li class="sub-menu"><a href="#" class=""><i class="fa fa-laptop" aria-hidden="true"></i> Gestionar Prestamo</a>
+	        <li class="sub-menu"><a href="#" class=""><i class="fa fa-laptop" aria-hidden="true"></i> Gestionar Prestamos</a>
 	       		<ul class="">
-	       			<a href="#" class=""> Prestar Bicicleta</a>
+	       			<a href="list-reservas" class=""> Prestar Bicicleta</a>
 	       		</ul>
 	       		<ul class="">
 	       			<a href="maps" class="">Puntos/Rutas Ciudad</a>

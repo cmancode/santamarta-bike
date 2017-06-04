@@ -25,8 +25,7 @@ initMap = function(){
 		contentType : "application/json",
 		url: "list-sitios"
 	});
-	solicitud.done(function(datosRecibidos) {
-		console.log(datosRecibidos);		
+	solicitud.done(function(datosRecibidos) {		
 		jQuery.each(datosRecibidos, function(i, datos){
 			var posicion = new google.maps.LatLng( datos.lat, datos.lng );
 			 marker = new google.maps.Marker({
