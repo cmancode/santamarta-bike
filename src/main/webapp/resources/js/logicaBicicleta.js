@@ -3,9 +3,11 @@ $(function(){
 	seleccionar();
 	limpiar();
 	actualizarDatos();
+	
 });
 
 var tr;
+
 
 limpiar = function(){
 	$('#btn-nueva-bici').on('click', function(event){
@@ -89,7 +91,7 @@ seleccionar = function(){
 		"<button class='modal-action modal-close waves-effect waves-green btn-ok editar-bici'>Actualizar Registro</button>");
 		tr = $(this).closest('tr');
 
-		var tdPlaca = tr.children('td:nth-child(1)').text();
+		var tdPlaca = tr.children('td:nth-child(24)').text();
 		
 		var solicitud = $.ajax({
 			type : "GET",
