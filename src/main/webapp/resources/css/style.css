@@ -101,7 +101,10 @@ ul[class*="side-nav"] {
 	width: 245px !important;
 }
 /*------------Fin Menu---------------------------*/
-
+/*-----------Map--------------*/
+#map{
+	height: 600px;
+}
 /* ------------ input buscar ; botones de agregar, buscar  ------------------------*/
 .botton-agregar {
     background-color: white;
@@ -263,7 +266,15 @@ div#modal-usuario {
     width: 60%;
     margin-left: 10px;
 }
-
+div .txt-maps{
+	width: 100%;
+}
+div .col6-map{
+	width: 30% !important;
+}
+div #contenido-map{
+	display: none !important;
+}
 .label-form, .label-form1 {
     color: #666;
 }

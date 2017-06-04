@@ -19,7 +19,6 @@ public class SitioDAOImpl extends GenericDAOImpl<Sitio, Long> implements ISitioD
 		return sitios;
 		
 	}
-
 	public Sitio sitio(String sitio) throws InstanceNotFoundException {
 		Sitio tipoBici = (Sitio) getSession().createQuery("from Sitio t where t.nombre = :sit")
 				.setParameter("sit", sitio).uniqueResult();		
