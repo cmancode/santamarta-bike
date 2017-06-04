@@ -35,7 +35,7 @@ public class NovedadServiceImpl implements INovedadService{
 	public Novedad buscarPorId(Long id) {
 		Novedad novedad = null;
 		try {
-			novedadDao.find(id);
+			novedad = novedadDao.find(id);
 		} catch (InstanceNotFoundException e) {
 			e.printStackTrace();
 		}

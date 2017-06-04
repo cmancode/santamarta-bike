@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="es">
 	    <head>
-        <title>Bicicletas</title>
+        <title>Multas </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="resources/css/materialize.css">
@@ -23,14 +23,14 @@
 	                    </div>
 	                    <div class="col s12.left m6 l6 margin-bottom">
 	                    	<div class="right">
-	                        	<button type="button" name="button" class="botton-agregar" data-target="modal-multa">Agregar Multas</button>
+	                        	<button id="btn-nueva-multa" type="button" name="button" class="botton-agregar" data-target="modal-multa">Agregar Multas</button>
 	                        </div>
 	                    </div>
 	                </div>
 	                <div class="col s12 separador-contenido-top">
 	                	<div class="col s12">
 	                    	<div class="contendenor-tabla separador-contenido-botton">
-	                        	<table>
+	                        	<table id="tabla-multas">
 	                            	<thead>
 	                                	<tr>
 	                                    	<th>Descripción</th>
@@ -40,12 +40,16 @@
 	                                    </tr>
 	                                </thead>
 	                                <tbody>
-	                                    <tr>
-	                                    	<td>Prueba</td>
-	                                    	<td>Prueba</td>
-	                                    	<td>Prueba</td>
-	                                        <td><input type="button" name="actualizar" class="btn-actualizar btn-accion" value="Editar"></td>
+	                                <c:forEach var = "multa" items="${novedad}">
+	                                    <tr id="idmulta${multa.id}">
+	                                     	 <input type="hidden" id="idmulta" value="${multa.id}" />
+	                                    	<td>${multa.descripcion}</td>
+	                                    	<td>${multa.costo}</td>
+	                                    	<td>${multa.estado}</td>
+	                                        <td><input data-id="${multa.id}" type="button" name="actualizar" data-target="modal-multa" class="btn-actualizar btn-accion" value="Editar"></td>
+	                                    	
 	                                    </tr>
+	                                    </c:forEach>
 	                                </tbody>
 	                          	</table>
 	                   			<div class="contenedor-total-res">
@@ -57,10 +61,13 @@
 	          	</div>
 	       	</div>
 	    </main> 
+	
 	    <%@ include file="modal-multa.jsp" %>
 	    
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+        <script src="resources/js/logicaMultas.js"></script>
+         <script src="resources/js/index.js"></script>
         <script src="https://use.fontawesome.com/72fa6900c1.js"></script>
         <script src="resources/js/index.js"></script>
         <script src="resources/js/menu.js"></script>
