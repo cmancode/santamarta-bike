@@ -23,13 +23,11 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	public void guardarUsuario(Usuario usuario) {
 		usuarioDAO.save(usuario);
 	}
-
 	@Override
 	@Transactional
 	public void ActualizarUsuario(Usuario usuario) {
 		usuarioDAO.save(usuario);
 	}
-
 	@Override
 	@Transactional
 	public Usuario buscarPorId(String id) {
@@ -41,7 +39,16 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		}
 		return usuario;
 	}
-
+	@Override
+	public List<Usuario> listLikeUsuarios(String cedula) {
+		List<Usuario> usuarios = null;
+		try {
+			usuarios = usuarioDAO.usuariosLikeList(cedula);
+		} catch (InstanceNotFoundException e) {
+			e.printStackTrace();
+		}
+		return usuarios;
+	}
 	@Override
 	@Transactional
 	public List<Usuario> listaUsuaios() {
@@ -53,14 +60,12 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		}
 		return usuarios;
 	}
-
 	@Override
 	@Transactional
 	public boolean existencia(Usuario usuario) {
-		String id = new String(usuario.getCedula());
+		String id = new String(usuario.getIdCedula());
 		boolean existio;
 		existio = usuarioDAO.exists(id);		
 		return existio;
 	}
-
 }

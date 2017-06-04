@@ -126,7 +126,6 @@ function actualizarSitio(){
 	
 
 function crearSitio(){
-	console.log("creando tipoB");
 	vSitio     = $('#sitio');
 	vFoto	   = $('#file_1');
 	vLatitud   = $('#latitud');
@@ -141,7 +140,7 @@ function crearSitio(){
 		lng		: vLongitud.val(),
 		direccion : vDireccion.val()
 	}
-	
+	console.log(sitio);
 	var solicitud = $.ajax({
 		type 		: 'POST',
 		contentType : 'application/json',
@@ -186,7 +185,6 @@ function buscarSitio(){
 		solicitud.done(function(datos){
 			$("#cuerpoTabla>tr").remove();
 			for (var i = 0; i < datos.length; i++) {
-				console.log(datos[i].idTipoBici);
 				$('#cuerpoTabla').append(
 						"<tr data-id=' " + datos[i].idSitio + "'>"+ 
 							"<td>" + datos[i].nombre + "</td>" +

@@ -28,27 +28,29 @@ public class Sitio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idSitio;
-	
 	@Column(nullable = false, length = 30)
 	private String nombre;
-	
 	@Column(nullable =  true)
 	private String foto;
-	
-	@Column(nullable = false)
-	private Long lat;
-	
-	@Column(nullable = false)
-	private Long lng;
-	
+	@Column(length = 20, nullable = false)
+	private String lat;
+	@Column(length = 20, nullable = false)
+	private String lng;
 	@Column(nullable = true, length = 60)
 	private String direccion;
-	
 	@JsonIgnore
 	@OneToMany(mappedBy = "idSitio", cascade = CascadeType.ALL)
 	private Set<Sitio> sitio;
+	@JsonIgnore
+	@OneToMany(mappedBy = "sitio", cascade = CascadeType.ALL)
+	private Set<Reserva> reserva;
 	
-	
+	public Set<Reserva> getReserva() {
+		return reserva;
+	}
+	public void setReserva(Set<Reserva> reserva) {
+		this.reserva = reserva;
+	}
 	public Set<Sitio> getSitio() {
 		return sitio;
 	}
@@ -73,16 +75,16 @@ public class Sitio {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
-	public Long getLat() {
+	public String getLat() {
 		return lat;
 	}
-	public void setLat(Long lat) {
+	public void setLat(String lat) {
 		this.lat = lat;
 	}
-	public Long getLng() {
+	public String getLng() {
 		return lng;
 	}
-	public void setLng(Long lng) {
+	public void setLng(String lng) {
 		this.lng = lng;
 	}
 	public String getDireccion() {

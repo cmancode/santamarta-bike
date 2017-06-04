@@ -55,24 +55,41 @@ public class Usuario {
 	@Column(name = "pass", nullable = false, length = 25)
 	private String password;
 	
-	@ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "ROLES_USUARIOS",
 			joinColumns = {@JoinColumn(name = "id_usuario")},
 			inverseJoinColumns = {@JoinColumn(name = "id_rol")})
 	private Set<Rol> rol = new HashSet<Rol>();
-
+		
 	@Column(nullable = false, length = 10)
 	private String estado;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	private Set<Entrega> entraga;
 	
-	public String getCedula() {
+	@JsonIgnore
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	private Set<Reserva> reserva;
+	
+	
+	public String getIdCedula() {
 		return idCedula;
 	}
-	public void setCedula(String idCedula) {
+	public void setIdCedula(String idCedula) {
 		this.idCedula = idCedula;
+	}
+	public Set<Entrega> getEntraga() {
+		return entraga;
+	}
+	public void setEntraga(Set<Entrega> entraga) {
+		this.entraga = entraga;
+	}
+	public Set<Reserva> getReserva() {
+		return reserva;
+	}
+	public void setReserva(Set<Reserva> reserva) {
+		this.reserva = reserva;
 	}
 	public String getTipoDoc() {
 		return tipoDoc;

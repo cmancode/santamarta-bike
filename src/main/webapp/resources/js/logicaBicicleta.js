@@ -108,7 +108,6 @@ seleccionar = function(){
 		});
 	});
 }
-
 actualizarDatos = function(){
 	$('#cambiar-btns').on('click','.editar-bici', function(e){
 		e.preventDefault();

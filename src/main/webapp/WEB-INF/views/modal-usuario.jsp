@@ -52,7 +52,7 @@
 		            	<input type="text" name="s-apellido" id="txt-sapellido" class="input-form">
 		            </div>
 		        </div>
-		    	<div class="input-informacion margin-bottom">
+		    	<div class="input-informacion margin-bottom container-pass">
 		        	<div class="contenedor-label-form ">
 		            	<label for="pass" class="label-form" >Contraseña </label>
 		            </div>
@@ -102,11 +102,12 @@
 		            	<input type="text" name="telefono" id="txt-telefono" class="input-form">
 		            </div>
 		        </div>
-		    	<div class="input-informacion margin-bottom">
+		    	<div class="input-informacion margin-bottom container-pass">
 		        	<div class="contenedor-label-form ">
 		            	<label for="pass" class="label-form" >Confirmar Contraseña </label>
 		            </div>
 		            <div class="contenedor-input-form ">
+		            	<input id="pass-actualizar" type="hidden"/>
 		            	<input type="password" name="pass2" id="txt-confirmar-pss" class="input-form">
 		            </div>
 		        </div>
@@ -135,9 +136,9 @@
 		            <div class="contenedor-input-form ">
 		            	<select id="txt-funciones" class="input-form">
 		            		<option value = "-1">Seleccionar...</option>
-		            		<option value = "1">ADMINISTRADOR</option>
-		            		<option value = "2">FUNCIONARIO</option>
-		            		<option value = "3">USUARIO</option>
+		          			<c:forEach var="roles" items="${listRoles}">
+		          				<option value = "${roles.idRol}">${roles.rol}</option>
+		          			</c:forEach>
 		            	</select>
 		            </div>
 		        </div>

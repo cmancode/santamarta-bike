@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class IndexControles {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String showIndex (Model model){
-		return "index";
+	public String showIndexAdmin (Model model){
+		return "index-admin";
+	}
+	@RequestMapping(value = "/index-usuario", method = RequestMethod.GET)
+	public String showIndexUsuario (Model model){
+		return "index-usuario";
 	}
 	
 }

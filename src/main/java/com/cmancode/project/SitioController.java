@@ -2,6 +2,8 @@ package com.cmancode.project;
 
 import java.util.List;
 
+import javax.swing.text.html.FormSubmitEvent.MethodType;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +27,6 @@ public class SitioController {
 	@RequestMapping(value = "/sitios", method = RequestMethod.GET)
 	public ModelAndView listaSitios (ModelAndView model){
 		List<Sitio> sitios = sitioService.listSitios();
-		System.out.println(sitios.get(0) );
 		model.addObject("sitios", sitios);
 		model.setViewName("sitios");
 		return model;
@@ -48,7 +49,6 @@ public class SitioController {
 			return new ResponseEntity<Sitio> (HttpStatus.NOT_ACCEPTABLE);
 		}
 		sitioService.guardarSitio(nuevoSitio);
-		
 		return new ResponseEntity<Sitio> (nuevoSitio, HttpStatus.CREATED);
 	}
 	
@@ -60,17 +60,26 @@ public class SitioController {
 		if(sitioEditar == null){
 			return new ResponseEntity<Sitio>(HttpStatus.NOT_FOUND);
 		}
-		
 		sitioEditar.setNombre(sitio.getNombre());
 		sitioEditar.setFoto(sitio.getFoto());
 		sitioEditar.setLat(sitio.getLat());
 		sitioEditar.setLng(sitio.getLng());
 		sitioEditar.setDireccion(sitio.getDireccion());
-		
-
 		sitioService.editarSitio(sitioEditar);
-	
 		return new ResponseEntity<Sitio> (sitioEditar, HttpStatus.CREATED);
 	}
 	
+	@RequestMapping(value = "/list-sitios", method = RequestMethod.GET)
+	public ResponseEntity<List<Sitio>> getLtdAndLng (){ //Lista de sitios para optenes los localizaciones
+		List<Sitio> sitios = sitioService.listSitios();
+		if(sitios.isEmpty()){
+			return new ResponseEntity<List<Sitio>>(HttpStatus.NOT_FOUND); 
+		}
+		return new ResponseEntity<List<Sitio>>(sitios, HttpStatus.OK);
+	}
+	@RequestMapping(value = "/maps", method = RequestMethod.GET)
+	public ModelAndView callMap(ModelAndView model){
+		model.setViewName("map");
+		return model;
+	}
 }
