@@ -3,6 +3,7 @@ package com.cmancode.project.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,18 +12,20 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "ROLES")
 public class Rol {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long idRol;
 	@Column(nullable = false, length = 30)
 	private String rol;
-	@ManyToMany(mappedBy = "rol")
+	@JsonIgnore
+	@ManyToMany(mappedBy = "rol", cascade = CascadeType.ALL)
 	private Set<Usuario> usuario = new HashSet<Usuario>();
-	
 	
 	public Set<Usuario> getUsuario() {
 		return usuario;
@@ -30,11 +33,11 @@ public class Rol {
 	public void setUsuario(Set<Usuario> usuario) {
 		this.usuario = usuario;
 	}
-	public Long getId() {
-		return id;
+	public Long getIdRol() {
+		return idRol;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdRol(Long idRol) {
+		this.idRol = idRol;
 	}
 	public String getRol() {
 		return rol;
@@ -42,7 +45,4 @@ public class Rol {
 	public void setRol(String rol) {
 		this.rol = rol;
 	}	
-	
-	
-
 }

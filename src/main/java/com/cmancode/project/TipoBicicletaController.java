@@ -22,42 +22,39 @@ public class TipoBicicletaController {
 	@Autowired
 	private ITipoBiciService tipoBiciService;
 	
-	@RequestMapping(value = "/tipobici", method = RequestMethod.GET)
+	@RequestMapping(value = "/tipoBicicleta", method = RequestMethod.GET)
 	public ModelAndView listaTiposBici(ModelAndView model){
 		List<TipoBicicleta> tipos = tipoBiciService.listaTipos();
-		model.addObject("tiposbici", tipos);
+
+		model.addObject("tiposbicicleta", tipos);
 		model.setViewName("tipoBicicleta");
 		return model;
 	}
 
-	@RequestMapping(value = "/tipobici-ba", method = RequestMethod.GET)
-	public ModelAndView buscarActualizarTipoBici(ModelAndView model){
-		model.setViewName("buscar-tipobici");
-		return model;
-	}
 	
-	@RequestMapping(value = "/tipobici/{idTipoBici}", method = RequestMethod.GET)
-	public ResponseEntity<TipoBicicleta> typeBiciById (@PathVariable("idTipoBici") Long id){
-		
-		TipoBicicleta tipoBici = tipoBiciService.tipoById(id);
-		if(tipoBici == null){
-			return new ResponseEntity<TipoBicicleta> (HttpStatus.NOT_FOUND);
+	@RequestMapping(value = "/tipoBicicleta/{tipoBici}", method = RequestMethod.GET)
+	public ResponseEntity<List<TipoBicicleta>> buscarTipoBicicleta (@PathVariable("tipoBici") String tipo){
+		List<TipoBicicleta> tipoBicicleta = tipoBiciService.listaBusquedaTiposBicicletas(tipo);
+		if(tipoBicicleta == null){
+			return new ResponseEntity< List<TipoBicicleta> >(HttpStatus.CONFLICT);
 		}
-		return new ResponseEntity<TipoBicicleta> (tipoBici, HttpStatus.OK);
+		
+		return new ResponseEntity< List<TipoBicicleta> > ( tipoBicicleta, HttpStatus.OK);
+		
 	}	
 	
-	@RequestMapping(value = "/tipobici", method = RequestMethod.POST)
+	@RequestMapping(value = "/tipoBicicleta", method = RequestMethod.POST)
 	public ResponseEntity<TipoBicicleta> crearTipoBici (@RequestBody TipoBicicleta nuevoTipo){
 		
-//		if(tipoBiciService.existenciaTipoBici(nuevoTipo) == true){
-//			return new ResponseEntity<TipoBicicleta> (HttpStatus.NOT_FOUND);
-//		}
+		if( tipoBiciService.tipoBicicletaExisteNombre(nuevoTipo) == true){
+			return new ResponseEntity<TipoBicicleta> (HttpStatus.NOT_ACCEPTABLE);
+		}
 		tipoBiciService.crearTipoBici(nuevoTipo);
 		
 		return new ResponseEntity<TipoBicicleta> (nuevoTipo, HttpStatus.CREATED);
 	}
 	
-	@RequestMapping(value = "/tipobici/{idTipoBici}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/tipoBicicleta/{idTipoBici}", method = RequestMethod.PUT)
 	public ResponseEntity<TipoBicicleta> editarTipoBici (@PathVariable("idTipoBici") Long id, @RequestBody TipoBicicleta tipoBicicleta){
 
 		TipoBicicleta tipoAeditar = tipoBiciService.tipoById(id);

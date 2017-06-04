@@ -28,22 +28,29 @@ public class Sitio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idSitio;
-	
 	@Column(nullable = false, length = 30)
 	private String nombre;
-	
 	@Column(nullable =  true)
 	private String foto;
-	
-	@JsonIgnore
-	@OneToOne(mappedBy = "sitio")
-	private Localizacion localizacion;
-	
+	@Column(length = 20, nullable = false)
+	private String lat;
+	@Column(length = 20, nullable = false)
+	private String lng;
+	@Column(nullable = true, length = 60)
+	private String direccion;
 	@JsonIgnore
 	@OneToMany(mappedBy = "idSitio", cascade = CascadeType.ALL)
 	private Set<Sitio> sitio;
+	@JsonIgnore
+	@OneToMany(mappedBy = "sitio", cascade = CascadeType.ALL)
+	private Set<Reserva> reserva;
 	
-	
+	public Set<Reserva> getReserva() {
+		return reserva;
+	}
+	public void setReserva(Set<Reserva> reserva) {
+		this.reserva = reserva;
+	}
 	public Set<Sitio> getSitio() {
 		return sitio;
 	}
@@ -62,17 +69,29 @@ public class Sitio {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public Localizacion getLocalizacion() {
-		return localizacion;
-	}
-	public void setLocalizacion(Localizacion localizacion) {
-		this.localizacion = localizacion;
-	}
 	public String getFoto() {
 		return foto;
 	}
 	public void setFoto(String foto) {
 		this.foto = foto;
+	}
+	public String getLat() {
+		return lat;
+	}
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+	public String getLng() {
+		return lng;
+	}
+	public void setLng(String lng) {
+		this.lng = lng;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 	
 	

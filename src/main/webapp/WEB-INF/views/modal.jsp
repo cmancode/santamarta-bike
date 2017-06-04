@@ -19,14 +19,13 @@
             	<label for="descripcion" class="label-form" >Descripción </label>
             </div>
 			<div class="contenedor-input-form ">
-            	<textarea rows="4" cols="50"></textarea>
+            	<textarea id="descripcion" rows="4" cols="50"></textarea>
             </div>
         </div>
     </div>
       <div class="modal-foter">
-      	<div class="contenido-botones-foter">
-        	<button class="modal-action modal-close waves-effect waves-green btn-cancelar">Cancelar</button>
-            <button  class="modal-action modal-close waves-effect waves-green btn-ok">Guardar</button>
+      	<div id="cambiar-btns-modal" class="contenido-botones-foter">
+
         </div>
       </div>
  </div>

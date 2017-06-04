@@ -68,5 +68,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
         <script src="resources/js/logicaMultas.js"></script>
          <script src="resources/js/index.js"></script>
+        <script src="https://use.fontawesome.com/72fa6900c1.js"></script>
+        <script src="resources/js/index.js"></script>
+        <script src="resources/js/menu.js"></script>
 	</body>	      	
 </html>

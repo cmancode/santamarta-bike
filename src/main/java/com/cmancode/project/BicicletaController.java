@@ -54,16 +54,14 @@ public class BicicletaController {
 	
 	@RequestMapping(value = "/new-bici", method = RequestMethod.POST)
 	public ResponseEntity<Bicicleta> crearBici (@RequestBody Bicicleta bicicleta, UriComponentsBuilder ucBuilder){		
-		
+
 		if(bicicleta.getPlaca() != null && biciService.existeBici(bicicleta)){
 			return new ResponseEntity<Bicicleta>(HttpStatus.CONFLICT);
 		}
-		
 		biciService.guardarBici(bicicleta);
-		
 		return new ResponseEntity<Bicicleta>(bicicleta, HttpStatus.CREATED);
 	}
-	
+	/*
 	@RequestMapping(value = "/buscar-bici", method = RequestMethod.GET)
 	public ModelAndView formBuscarBici (ModelAndView model){
 		List<TipoBicicleta> tipos = tipobiciService.listaTipos();
@@ -71,7 +69,7 @@ public class BicicletaController {
 		model.setViewName("buscar-editar-bici");
 		return model;
 	}
-	
+	*/
 	@RequestMapping(value = "/buscar-bici/{placa}", method = RequestMethod.GET)
 	public ResponseEntity<Bicicleta> buscarBici(@PathVariable("placa") String placa){
 
@@ -79,7 +77,6 @@ public class BicicletaController {
 		if(bicicleta == null){
 			return new ResponseEntity<Bicicleta>(HttpStatus.NOT_FOUND);
 		}
-		System.out.println("Resultado Ok");
 		return new ResponseEntity<Bicicleta>(bicicleta, HttpStatus.OK);
 	}
 

@@ -13,7 +13,7 @@
 		            	<label for="tipo-doc" class="label-form" >Tipo Documento </label>
 		            </div>
 		            <div class="contenedor-input-form ">
-		            	<select class="input-form">
+		            	<select id="txt-tipo-doc" class="input-form">
 		            		<option value = "-1">Seleccionar...</option>
 		            		<option value = "Cédula Ciudadanía">Cédula Ciudadanía</option>
 		            		<option value = "Tarjeta de Identidad">Tarjeta de Identidad</option>
@@ -33,7 +33,7 @@
 		            	<label for="nombres" class="label-form" >Nombres </label>
 		            </div>
 		            <div class="contenedor-input-form ">
-		            	<input type="text" name="nombres" id="txt-numbres" class="input-form">
+		            	<input type="text" name="nombres" id="txt-nombres" class="input-form">
 		            </div>
 		        </div>
 		    	<div class="input-informacion margin-bottom">
@@ -52,11 +52,19 @@
 		            	<input type="text" name="s-apellido" id="txt-sapellido" class="input-form">
 		            </div>
 		        </div>
+		    	<div class="input-informacion margin-bottom container-pass">
+		        	<div class="contenedor-label-form ">
+		            	<label for="pass" class="label-form" >Contraseña </label>
+		            </div>
+		            <div class="contenedor-input-form ">
+		            	<input type="password" name="pass" id="txt-passw" class="input-form">
+		            </div>
+		        </div>
 			</div>
 			<div class="col s6">
 		    	<div class="input-informacion margin-bottom">
 		        	<div class="contenedor-label-form ">
-		            	<label for="ciudad" class="label-form" >Ciudad Residencia </label>
+		            	<label for="ciudad" class="label-form" >Ciudad Resid. </label>
 		            </div>
 		            <div class="contenedor-input-form ">
 		            	<input type="text" name="ciudad" id="txt-ciudad" class="input-form">
@@ -94,6 +102,15 @@
 		            	<input type="text" name="telefono" id="txt-telefono" class="input-form">
 		            </div>
 		        </div>
+		    	<div class="input-informacion margin-bottom container-pass">
+		        	<div class="contenedor-label-form ">
+		            	<label for="pass" class="label-form" >Confirmar Contraseña </label>
+		            </div>
+		            <div class="contenedor-input-form ">
+		            	<input id="pass-actualizar" type="hidden"/>
+		            	<input type="password" name="pass2" id="txt-confirmar-pss" class="input-form">
+		            </div>
+		        </div>
 			</div>
 		</div>
 		<div class="row">
@@ -103,10 +120,10 @@
 		            	<label for="esat" class="label-form" >Estado </label>
 		            </div>
 		            <div class="contenedor-input-form ">
-		            	<select class="input-form">
+		            	<select id="txt-estado-user" class="input-form">
 		            		<option value = "-1">Seleccionar...</option>
-		            		<option value = "Cédula Ciudadanía">ACTIVO</option>
-		            		<option value = "Tarjeta de Identidad">INACTIVO</option>
+		            		<option value = "ACTIVO">ACTIVO</option>
+		            		<option value = "INACTIVO">INACTIVO</option>
 		            	</select>
 		            </div>
 		        </div>
@@ -117,11 +134,11 @@
 		            	<label for="esat" class="label-form" >Funciones </label>
 		            </div>
 		            <div class="contenedor-input-form ">
-		            	<select class="input-form">
+		            	<select id="txt-funciones" class="input-form">
 		            		<option value = "-1">Seleccionar...</option>
-		            		<option value = "Cédula Ciudadanía">ADMINISTRADOR</option>
-		            		<option value = "Tarjeta de Identidad">FUNCIONARIO</option>
-		            		<option value = "Tarjeta de Identidad">USUARIO</option>
+		          			<c:forEach var="roles" items="${listRoles}">
+		          				<option value = "${roles.idRol}">${roles.rol}</option>
+		          			</c:forEach>
 		            	</select>
 		            </div>
 		        </div>
@@ -129,7 +146,7 @@
 		</div>
     </div>
       <div class="modal-foter">
-      	<div class="contenido-botones-foter">
+      	<div id="container-buttons-user" class="contenido-botones-foter">
         	<button class="modal-action modal-close waves-effect waves-green btn-cancelar">Cancelar</button>
             <button  class="modal-action modal-close waves-effect waves-green btn-ok">Guardar</button>
         </div>

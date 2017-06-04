@@ -1,6 +1,7 @@
 *{
 	padding: 0;
 	margin: 0;
+	font-family: 'Roboto', sans-serif;
 }
 hr{
 	border-left: none;
@@ -12,12 +13,45 @@ hr{
 	font-size: 29px;
 	font-weight: 900;
 }
+/*#datos-usuario{
+	display: none;
+}*/
+.side-nav li > a > i{
+	float: left;
+    height: 48px;
+    line-height: 48px;
+    margin-right: 5px;
+    width: 24px;
+    color: #fafafa !important;
+}
+.side-nav li:not(#li-container-logo)::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 15px;
+    height: 15px; 
+    right: 15px;
+    top: 23px;
+    background-image: url(../img/image.svg);
+    background-position: center;
+    background-size: contain;
+    transition: transform 0.5s cubic-bezier(0, 1.38, 1, 1);
+}
+.side-nav li.activado::after {
+    transform: rotateZ(180deg); 
+}
+.side-nav li {
+    position: relative;
+}
+#li-container-logo{
+	margin-bottom: 22px;
+}
 button, input {
     outline: 0px;
 }
 
 header, main, footer {
-  padding-left: 220px;
+  padding-left: 245px;
 }
 
 @media only screen and (max-width : 992px) {
@@ -31,7 +65,6 @@ header, main, footer {
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
     background-color: #F8F8F8;
 }
 #slide-out li a{
@@ -51,22 +84,27 @@ ul[class*="side-nav"] {
 
 /*---------------Menu----------------------------*/
 #slide-out li > a, #slide-out li ul a{
-	color: #fff;
+	color: #fafafa;
 	padding: 7px 15px;
 }
 #slide-out ul{
 	display: none;
 }
 #slide-out li ul{ /*Fondo de los sub-menus*/
-	background: #1408FF;
+	background: #242733 !important;
 	color: #fff;
+	padding-left: 30px;
 }
 
 #slide-out{
-	background: #1C0082 !important;
+	background: #20222D !important;
+	width: 245px !important;
 }
 /*------------Fin Menu---------------------------*/
-
+/*-----------Map--------------*/
+#map{
+	height: 600px;
+}
 /* ------------ input buscar ; botones de agregar, buscar  ------------------------*/
 .botton-agregar {
     background-color: white;
@@ -166,6 +204,7 @@ tbody > tr:hover{
 
 .contenedor-total-res {
     color: #666;
+    margin-top: 20px;
 }
 
 /* modals ----------------------------------------------*/
@@ -173,6 +212,7 @@ tbody > tr:hover{
 .modal-header{
     border-bottom: 1px solid #f4f4f4;
     padding: 14px 16px;
+    background: rgba(224, 224, 224, 0.47);
 }
 .modal-section{
     padding: 14px 16px;
@@ -200,7 +240,8 @@ div#modal-usuario {
 .btn-cancelar{
     background-color: white;
     border: 1px solid #e5e5e5;
-    padding: 8px 10px;
+    padding: 9px 10px;
+    margin-right: 20px;
     border-radius: 3px;
     color: #666;
     cursor: pointer;
@@ -225,8 +266,16 @@ div#modal-usuario {
     width: 60%;
     margin-left: 10px;
 }
-
-.label-form {
+div .txt-maps{
+	width: 100%;
+}
+div .col6-map{
+	width: 30% !important;
+}
+div #contenido-map{
+	display: none !important;
+}
+.label-form, .label-form1 {
     color: #666;
 }
 
@@ -273,3 +322,53 @@ textarea {
     width: 70%;
     background-color: #fff;
 }
+
+/*-------Estilo Input File ---------------------------*/
+.input__row{
+  margin-top: 10px;  
+}
+
+.uploader {
+  border: 1px solid #e5e5e5;
+  width: 76%;
+  position: relative;
+  height: 30px;
+  display: flex;
+}
+
+/* Upload button */
+.upload {
+  display: none;
+}
+
+.uploader .input-value{
+  width: 250px;
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 25px;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+.uploader label {
+  cursor: pointer;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  background: #c3e3fc url('https://www.interactius.com/wp-content/uploads/2016/08/folder.png') no-repeat center;
+}
+
+/* Submit button */
+.submitbtn {
+  text-transform: uppercase;
+  background-color: #1f659b;
+  border-radius: 0;
+  font-weight: bold;
+  width: 90px;
+  border: none;
+  height: 30px;
+  color: #fff;
+}
+

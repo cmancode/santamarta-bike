@@ -16,6 +16,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.FetchMode;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -23,11 +25,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Usuario {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
 	@Column(unique = true, nullable = false, length = 12)
-	private String cedula;
+	private String idCedula;
 	
 	@Column(name = "tiopo_documento", nullable = false, length = 20)
 	private String tipoDoc;
@@ -53,36 +52,44 @@ public class Usuario {
 	@Column(name = "dir_residencia", nullable = false, length = 30)
 	private String dirResidencia;
 	
-	@Column(name = "user_name", nullable = false, length = 25)
-	private String userName;
-	
 	@Column(name = "pass", nullable = false, length = 25)
 	private String password;
 	
-	@ManyToMany(cascade = {CascadeType.ALL})
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "ROLES_USUARIOS",
 			joinColumns = {@JoinColumn(name = "id_usuario")},
 			inverseJoinColumns = {@JoinColumn(name = "id_rol")})
 	private Set<Rol> rol = new HashSet<Rol>();
-
+		
 	@Column(nullable = false, length = 10)
 	private String estado;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	private Set<Entrega> entraga;
 	
-	public Long getId() {
-		return id;
+	@JsonIgnore
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	private Set<Reserva> reserva;
+	
+	
+	public String getIdCedula() {
+		return idCedula;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdCedula(String idCedula) {
+		this.idCedula = idCedula;
 	}
-	public String getCedula() {
-		return cedula;
+	public Set<Entrega> getEntraga() {
+		return entraga;
 	}
-	public void setCedula(String cedula) {
-		this.cedula = cedula;
+	public void setEntraga(Set<Entrega> entraga) {
+		this.entraga = entraga;
+	}
+	public Set<Reserva> getReserva() {
+		return reserva;
+	}
+	public void setReserva(Set<Reserva> reserva) {
+		this.reserva = reserva;
 	}
 	public String getTipoDoc() {
 		return tipoDoc;
@@ -131,12 +138,6 @@ public class Usuario {
 	}
 	public void setDirResidencia(String dirResidencia) {
 		this.dirResidencia = dirResidencia;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 	public String getPassword() {
 		return password;

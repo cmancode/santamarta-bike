@@ -11,5 +11,7 @@ public interface ISitioService {
 	public Sitio buscarPorId(Long id);
 	public void editarSitio (Sitio sitio);
 	public boolean existeSitio(Sitio sitio);
-	
+	public List<Sitio> listaBusquedaSitios(String sitio);
+	public Sitio sitio(String sitio);
+	public boolean sitioExisteNombre(Sitio sitio);
 }
