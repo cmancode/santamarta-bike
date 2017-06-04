@@ -47,7 +47,6 @@ public class SitioController {
 			return new ResponseEntity<Sitio> (HttpStatus.NOT_ACCEPTABLE);
 		}
 		sitioService.guardarSitio(nuevoSitio);
-		
 		return new ResponseEntity<Sitio> (nuevoSitio, HttpStatus.CREATED);
 	}
 	

@@ -3,6 +3,7 @@ package com.cmancode.project.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,9 +24,8 @@ public class Rol {
 	@Column(nullable = false, length = 30)
 	private String rol;
 	@JsonIgnore
-	@ManyToMany(mappedBy = "rol")
+	@ManyToMany(mappedBy = "rol", cascade = CascadeType.ALL)
 	private Set<Usuario> usuario = new HashSet<Usuario>();
-	
 	
 	public Set<Usuario> getUsuario() {
 		return usuario;
@@ -33,8 +33,6 @@ public class Rol {
 	public void setUsuario(Set<Usuario> usuario) {
 		this.usuario = usuario;
 	}
-
-	
 	public Long getIdRol() {
 		return idRol;
 	}
@@ -47,7 +45,4 @@ public class Rol {
 	public void setRol(String rol) {
 		this.rol = rol;
 	}	
-	
-	
-
 }

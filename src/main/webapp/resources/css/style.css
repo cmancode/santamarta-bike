@@ -13,6 +13,9 @@ hr{
 	font-size: 29px;
 	font-weight: 900;
 }
+/*#datos-usuario{
+	display: none;
+}*/
 .side-nav li > a > i{
 	float: left;
     height: 48px;
