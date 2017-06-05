@@ -19,29 +19,19 @@ public class Reserva {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "idSitio")
-	private Sitio sitio;
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "idBicicleta")
+	@JoinColumn(name = "idBicicleta", nullable = false)
 	private Bicicleta bicicleta;
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "idUsuario")
+	@JoinColumn(name = "idUsuario", nullable = false)
 	private Usuario usuario;
 	@Column(nullable = false, length = 15)
 	private String estado;
-	
 	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
-	public Sitio getSitio() {
-		return sitio;
-	}
-	public void setSitio(Sitio sitio) {
-		this.sitio = sitio;
 	}
 	public Bicicleta getBicicleta() {
 		return bicicleta;

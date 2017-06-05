@@ -19,12 +19,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Rol {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue
 	private Long idRol;
 	@Column(nullable = false, length = 30)
 	private String rol;
 	@JsonIgnore
-	@ManyToMany(mappedBy = "rol", cascade = CascadeType.ALL)
+	@ManyToMany(mappedBy = "rol")
 	private Set<Usuario> usuario = new HashSet<Usuario>();
 	
 	public Set<Usuario> getUsuario() {

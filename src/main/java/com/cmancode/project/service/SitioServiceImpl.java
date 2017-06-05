@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.cmancode.project.dao.ISitioDAO;
 import com.cmancode.project.exceptions.InstanceNotFoundException;
+import com.cmancode.project.model.Bicicleta;
 import com.cmancode.project.model.Sitio;
 
 @Service("sitioService")
@@ -101,6 +102,17 @@ public class SitioServiceImpl implements ISitioService{
 			e.printStackTrace();			
 		}
 		return valor;
+	}
+
+	@Override
+	public List<Object> bicicletasDeSitios(Long idSitio) {
+		List<Object> bicicletas = null;
+		try {
+			bicicletas = sitioDao.bicicletasDeSitio(idSitio);
+		} catch (InstanceNotFoundException e) {
+			e.printStackTrace();
+		}
+		return bicicletas;
 	}
 	
 }

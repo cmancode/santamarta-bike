@@ -19,10 +19,18 @@
 	        </li>
 	        <li class="sub-menu"><a href="#" class=""><i class="fa fa-laptop" aria-hidden="true"></i> Gestionar Prestamos</a>
 	       		<ul class="">
-	       			<a href="list-reservas" class=""> Prestar Bicicleta</a>
+	       			<a href="realizar-prestamos" class=""> Prestar Bicicleta</a>
+	       		</ul>
+	       		<ul class="">
+	       			<a href="list-reservas" class=""> Seguimiento Prestamos</a>
 	       		</ul>
 	       		<ul class="">
 	       			<a href="maps" class="">Puntos/Rutas Ciudad</a>
+	       		</ul>
+	        </li>
+			<li class="sub-menu"><a href="#"  class=""><i class="fa fa-bicycle" aria-hidden="true"></i> Enlace Admin</a>
+	       		<ul>
+	       			<a href="/project/" class="">Index Admin</a>
 	       		</ul>
 	        </li>
 	      <!--<li class="sub-menu"><a href="#"  class=""><i class="fa fa-bicycle" aria-hidden="true"></i> Bicicletas</a>

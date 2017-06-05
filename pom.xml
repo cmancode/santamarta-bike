@@ -18,6 +18,9 @@
 	<dependencies>
 		<!-- Cloudinary -->
 
+		<!-- Spring Segurity -->
+		
+
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>

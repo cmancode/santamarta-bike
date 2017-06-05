@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cmancode.project.model.Bicicleta;
 import com.cmancode.project.model.Sitio;
 import com.cmancode.project.model.TipoBicicleta;
 import com.cmancode.project.service.ISitioService;
@@ -38,10 +39,8 @@ public class SitioController {
 		if(sitios == null){
 			return new ResponseEntity< List<Sitio> >(HttpStatus.CONFLICT);
 		}
-		
-		return new ResponseEntity< List<Sitio> > ( sitios, HttpStatus.OK);
+		return new ResponseEntity< List<Sitio> > (sitios, HttpStatus.OK);
 	}
-
 	@RequestMapping(value = "/sitios", method = RequestMethod.POST)
 	public ResponseEntity<Sitio> crearSitio (@RequestBody Sitio nuevoSitio){
 		

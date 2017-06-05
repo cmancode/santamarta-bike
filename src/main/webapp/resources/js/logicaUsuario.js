@@ -43,9 +43,10 @@ guardarUsuario = function(){
 		var txtFunciones = $('#txt-funciones').val();
 		var txtDescripFunciones = $('#txt-funciones option:selected').text();
 		var jsonRoles = {
-				id: txtFunciones,
+				idRol: txtFunciones,
 				rol: txtDescripFunciones
 		}
+		console.log(jsonRoles);
 		var jsonUsuario = {
 				idCedula: txtNumDocum,
 				tipoDoc: txtTipoDoc,

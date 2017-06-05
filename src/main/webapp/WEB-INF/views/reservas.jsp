@@ -16,16 +16,11 @@
 	    	<div class="row contenido">
 	        	<div class="col s12 white">
 	            	<div class="col s12 separador-contenido-top">
-	            	<h5>Reservas realizadas</h5>
+	            	<h5>Historial de reservas</h5>
 	            	<hr>
 	                	<div class="col  s12 m6 l6  margin-bottom">
-	                    	<input type="text" name="" value="" class="input-buscar" placeholder="Placa">
-	                        <button type="button" name="button" class="boton-buscar ">Buscar</button>
-	                    </div>
-	                    <div class="col s12.left m6 l6 margin-bottom">
-	                    	<div class="right">
-	                        	<button id="btn-nueva-bici" type="button" name="button" class="botton-agregar" data-target="modal-bicicleta">Agregar Bicicleta</button>
-	                        </div>
+	                    	<input type="text" name="" value="" class="input-buscar" placeholder="Identificador Reserva">
+	                        <button id="btn-buscar-reserva" type="button" name="button" class="boton-buscar ">Buscar</button>
 	                    </div>
 	                </div>
 	                <div class="col s12 separador-contenido-top">
@@ -34,8 +29,7 @@
 	                        	<table id="table-biclicleta">
 	                            	<thead>
 	                                	<tr>
-	                                    	<th>Identificador</th>
-	                                        <th>Sítio</th>
+	                                    	<th>N° Radicado</th>
 	                                        <th>Bicicleta</th>
 	                                        <th>Color Bici</th>
 	                                        <th>Estado Reserva</th>
@@ -46,7 +40,6 @@
 	                                    <c:forEach var = "reservas" items="${reser}">
 	                                    <tr>
 	                                    	<td>${reservas.id}</td>
-	                                    	<td>${reservas.sitio.nombre}</td>
 	                                    	<td>${reservas.bicicleta.idTipoBici.descripcion}</td>
 	                                    	<td>${reservas.bicicleta.color}</td>
 	                                    	<td>${reservas.estado}</td>
@@ -64,12 +57,12 @@
 	          	</div>
 	       	</div>
 	    </main> 
-	    <%@ include file="modal-reserva.jsp" %>
 	    
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
         <script src="https://use.fontawesome.com/72fa6900c1.js"></script>
         <script src="resources/js/logicaBicicleta.js"></script>
+        <script src="resources/js/logicaReserva.js"></script>
         <script src="resources/js/menu.js"></script>
         <script src="resources/js/index.js"></script>
 	</body>	      	

@@ -22,7 +22,7 @@
 	    <%@ include file="principal.jsp" %>
 	    <main>
 	    	
-			<h1>Bienvenido</h1>
+			<h1> Bienvenido Administrador</h1>
 	    </main> 
 	    <%@ include file="modal.jsp" %>
 	    

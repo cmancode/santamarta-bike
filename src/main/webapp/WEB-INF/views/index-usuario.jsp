@@ -22,7 +22,7 @@
 	    <%@ include file="principal-rol-usuario.jsp" %>
 	    <main>
 	    	
-			<h1>Bienvenido</h1>
+			<h1> Bienvenido Usuario</h1>
 	    </main> 
 	    	    
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
