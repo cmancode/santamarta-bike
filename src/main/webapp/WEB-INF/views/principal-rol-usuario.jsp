@@ -17,12 +17,20 @@
 	    	<li id="li-container-logo" class="center-align">
 	        	<a  href="#" class=""><h5 id="logo">SM - Bike <i class="fa fa-bicycle" aria-hidden="true"></i></h5></a>
 	        </li>
-	        <li class="sub-menu"><a href="#" class=""><i class="fa fa-laptop" aria-hidden="true"></i> Gestionar Prestamo</a>
+	        <li class="sub-menu"><a href="#" class=""><i class="fa fa-laptop" aria-hidden="true"></i> Gestionar Prestamos</a>
 	       		<ul class="">
-	       			<a href="#" class=""> Prestar Bicicleta</a>
+	       			<a href="realizar-prestamos" class=""> Prestar Bicicleta</a>
+	       		</ul>
+	       		<ul class="">
+	       			<a href="list-reservas" class=""> Seguimiento Prestamos</a>
 	       		</ul>
 	       		<ul class="">
 	       			<a href="maps" class="">Puntos/Rutas Ciudad</a>
+	       		</ul>
+	        </li>
+			<li class="sub-menu"><a href="#"  class=""><i class="fa fa-bicycle" aria-hidden="true"></i> Enlace Admin</a>
+	       		<ul>
+	       			<a href="/project/" class="">Index Admin</a>
 	       		</ul>
 	        </li>
 	      <!--<li class="sub-menu"><a href="#"  class=""><i class="fa fa-bicycle" aria-hidden="true"></i> Bicicletas</a>

@@ -3,51 +3,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="es">
 	    <head>
-        <title>Multas </title>
+        <title>Bicicletas</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="resources/css/materialize.css">
         <link rel="stylesheet" href="resources/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Arimo|Old+Standard+TT|Playfair+Display|Roboto" rel="stylesheet">
     </head>
     <body>
-	    <%@ include file="principal.jsp" %>
+	    <%@ include file="principal-rol-usuario.jsp" %>
 	    <main>
 	    	<div class="row contenido">
 	        	<div class="col s12 white">
 	            	<div class="col s12 separador-contenido-top">
-	            	<h5>Administración - Multas</h5>
+	            	<h5>Historial de reservas</h5>
 	            	<hr>
 	                	<div class="col  s12 m6 l6  margin-bottom">
-	                    	<input type="text" name="" value="" class="input-buscar" placeholder="Palabra clave">
-	                        <button type="button" name="button" class="boton-buscar ">Buscar</button>
-	                    </div>
-	                    <div class="col s12.left m6 l6 margin-bottom">
-	                    	<div class="right">
-	                        	<button id="btn-nueva-multa" type="button" name="button" class="botton-agregar" data-target="modal-multa">Agregar Multas</button>
-	                        </div>
+	                    	<input type="text" name="" value="" class="input-buscar" placeholder="Identificador Reserva">
+	                        <button id="btn-buscar-reserva" type="button" name="button" class="boton-buscar ">Buscar</button>
 	                    </div>
 	                </div>
 	                <div class="col s12 separador-contenido-top">
 	                	<div class="col s12">
 	                    	<div class="contendenor-tabla separador-contenido-botton">
-	                        	<table id="tabla-multas">
+	                        	<table id="table-biclicleta">
 	                            	<thead>
 	                                	<tr>
-	                                    	<th>Descripción</th>
-	                                        <th>Costo</th>
-	                                        <th>Estado</th>
+	                                    	<th>N° Radicado</th>
+	                                        <th>Bicicleta</th>
+	                                        <th>Color Bici</th>
+	                                        <th>Estado Reserva</th>
 	                                        <th>Acción</th>
 	                                    </tr>
 	                                </thead>
 	                                <tbody>
-	                                <c:forEach var = "multa" items="${novedad}">
-	                                    <tr id="idmulta${multa.id}">
-	                                     	 <input type="hidden" id="idmulta" value="${multa.id}" />
-	                                    	<td>${multa.descripcion}</td>
-	                                    	<td>${multa.costo}</td>
-	                                    	<td>${multa.estado}</td>
-	                                        <td><input data-id="${multa.id}" type="button" name="actualizar" data-target="modal-multa" class="btn-actualizar btn-accion" value="Editar"></td>
-	                                    	
+	                                    <c:forEach var = "reservas" items="${reser}">
+	                                    <tr>
+	                                    	<td>${reservas.id}</td>
+	                                    	<td>${reservas.bicicleta.idTipoBici.descripcion}</td>
+	                                    	<td>${reservas.bicicleta.color}</td>
+	                                    	<td>${reservas.estado}</td>
+	                                        <td><input type="button" name="actualizar" class="btn-actualizar btn-accion btn-editar" data-target="modal-bicicleta" value="Editar"></td>
 	                                    </tr>
 	                                    </c:forEach>
 	                                </tbody>
@@ -61,15 +57,13 @@
 	          	</div>
 	       	</div>
 	    </main> 
-	
-	    <%@ include file="modal-multa.jsp" %>
 	    
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script src="resources/js/logicaMultas.js"></script>
-         <script src="resources/js/index.js"></script>
         <script src="https://use.fontawesome.com/72fa6900c1.js"></script>
-        <script src="resources/js/index.js"></script>
+        <script src="resources/js/logicaBicicleta.js"></script>
+        <script src="resources/js/logicaReserva.js"></script>
         <script src="resources/js/menu.js"></script>
+        <script src="resources/js/index.js"></script>
 	</body>	      	
 </html>

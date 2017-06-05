@@ -41,16 +41,7 @@ public class Sitio {
 	@JsonIgnore
 	@OneToMany(mappedBy = "idSitio", cascade = CascadeType.ALL)
 	private Set<Sitio> sitio;
-	@JsonIgnore
-	@OneToMany(mappedBy = "sitio", cascade = CascadeType.ALL)
-	private Set<Reserva> reserva;
-	
-	public Set<Reserva> getReserva() {
-		return reserva;
-	}
-	public void setReserva(Set<Reserva> reserva) {
-		this.reserva = reserva;
-	}
+
 	public Set<Sitio> getSitio() {
 		return sitio;
 	}

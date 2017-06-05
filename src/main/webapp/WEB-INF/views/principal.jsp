@@ -45,6 +45,11 @@
 	       			<a href="sitios" class="">Gestión puntos de retorno</a>
 	       		</ul>
 	    	</li>
+	        <li class="sub-menu"><a href="#" class=""><i class="fa fa-globe" aria-hidden="true"></i> Enlace Usuario</a>
+	       		<ul>
+	       			<a href="index-usuario" class="">Index Usuario</a>
+	       		</ul>
+	    	</li>
 		</ul>
   	</div>
 </header>
