@@ -1,18 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="es">
-	    <head>
-        <title>Bienvenido Funcionario</title>
+	<head>
+        <title>Bicicletas Prestadas</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="resources/css/materialize.css">
@@ -23,39 +15,32 @@
 	    <main>
 	    	<div class="row contenido">
 	        	<div class="col s12 white">
-	            	<div class="col s12 separador-contenido-top">
-	                	<div class="col  s12 m6 l6  margin-bottom">
-	                    	<input type="text" name="" value="" class="input-buscar" placeholder="Tipo De Bicicleta" id="textTipoBicicleta">
-	                        <button type="button" name="button" class="boton-buscar " id="buscarTipoBicicleta">Buscar</button>
-	                    </div>
-	                    <div class="col s12.left m6 l6 margin-bottom">
-	                    	<div class="right">
-	                        	<button type="button" name="button" class="botton-agregar" data-target="modal1" id="agregar">Agregar Tipo Bicicleta</button>
-	                        </div>
-	                    </div>
-	                </div>
 	                <div class="col s12 separador-contenido-top">
+	                	<h5>Bicicletas - Prestadas</h5>
+	            		<hr>
 	                	<div class="col s12">
 	                    	<div class="contendenor-tabla separador-contenido-botton">
 	                        	<table id="tabla-tipoBicicleta">
 	                            	<thead>
 	                                	<tr >
 	                                    	<th>Tipo Bicicleta</th>
-	                                        <th>Descripción</th>
-	                                        <th>Acción</th>
-	                                        <th>Acción</th>
+	                                        <th>Placa</th>
+	                                        <th>Sitio</th>
+	                                        <th>Estado</th>
 	                                    </tr>
 	                                </thead>
 	                                <tbody id="cuerpoTabla">
 	                                	<%! int i = 0;%>
-	                                	<c:forEach var="tipoB" items="${tiposbicicleta}">
-	                                		<% i = i + 1; %>
-	                                		<tr data-id="${tipoB.idTipoBici}"> 
-	                                			<td>${tipoB.tipo}</td>
-	                                			<td>${tipoB.descripcion}</td>
-	                                			<td><input type='button' name='actualizar' class='btn-actualizar btn-accion' value='Editar' data-target="modal1" ></td>
-                   								<td><input type='button' name='eliminar' class='btn-eliminar btn-accion'  value='Eliminar'></td>
-	                                		</tr>
+	                                	<c:forEach var="reserva" items="${reservas}">
+	                            
+	                                			<tr data-id="${reserva.id}"> 
+	                                				<td>${reserva.estado}</td>
+	                                				<td>${reserva.idBicicleta}</td>
+	                                				<td>${reserva.idSitio.nombre}</td>
+	                                				<td class='btn-actualizar'>${reserva.idUsuario.nombres} </td>
+	                                			</tr>
+	                                			<% i = i + 1; %>
+	                                		
 	                                	</c:forEach>
 	                                	
 	                                </tbody>
@@ -77,6 +62,4 @@
         <script src="resources/js/index.js"></script>
         <script src="resources/js/menu.js"></script>
 	</body>	      	
-</html>
-</body>
 </html>

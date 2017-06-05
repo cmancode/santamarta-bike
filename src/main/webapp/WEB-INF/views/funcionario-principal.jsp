@@ -19,10 +19,10 @@
 	        </li>
 	        <li class="sub-menu"><a href="#"  class=""><i class="fa fa-bicycle" aria-hidden="true"></i> Bicicletas</a>
 	       		<ul>
-	       			<a href="new-bici" class="">Bicicletas Prestadas</a>
+	       			<a href="bicicletas-prestadas" class="">Bicicletas Prestadas</a>
 	       		</ul>
 	       		<ul>
-	       			<a href="new-bici" class="">Bicicletas Disponibles</a>
+	       			<a href="bicicletas-disponibles" class="">Bicicletas Disponibles</a>
 	       		</ul>
 	        </li>
 	        <li class="sub-menu"><a href="#"  class=""><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Gestión</a>
