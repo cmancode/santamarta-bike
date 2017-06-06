@@ -27,15 +27,15 @@
 	        </li>
 	        <li class="sub-menu"><a href="#"  class=""><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Gestión</a>
 	       		<ul>
-	       			<a href="multas" class="">Prestar Bicicleta</a>
+	       			<a href="bicicleta-tramite" class="">Prestar Bicicleta</a>
 	       		</ul>
 	       		<ul>
-	       			<a href="multas" class="">Situación</a>
+	       			<a href="#" class="">Situación</a>
 	       		</ul>
 	        </li>
 	        <li class="sub-menu"><a href="#" class=""><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
 	       		<ul>
-	       			<a href="usuarios" class="">Administrar Usuarios</a>
+	       			<a href="/project" class="">Administrar Usuarios</a>
 	       		</ul>
 	    	</li>
 		</ul>
