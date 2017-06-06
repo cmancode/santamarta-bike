@@ -26,21 +26,22 @@
 	                                    	<th>Tipo Bicicleta</th>
 	                                        <th>Placa</th>
 	                                        <th>Sitio</th>
-	                                        <th>Estado</th>
+	                                        <th>Nombre Usuario</th>
 	                                    </tr>
 	                                </thead>
 	                                <tbody id="cuerpoTabla">
 	                                	<%! int i = 0;%>
 	                                	<c:forEach var="reserva" items="${reservas}">
-	                            
+	                            			<c:if test="${reserva.estado == 'APROBADO' }">
 	                                			<tr data-id="${reserva.id}"> 
-	                                				<td>${reserva.estado}</td>
-	                                				<td>${reserva.idBicicleta}</td>
-	                                				<td>${reserva.idSitio.nombre}</td>
-	                                				<td class='btn-actualizar'>${reserva.idUsuario.nombres} </td>
+	                                				<td>${reserva.bicicleta.idTipoBici.tipo}</td>
+	                                				<td>${reserva.bicicleta.placa}</td>
+	                                				<td>${reserva.bicicleta.idSitio.nombre }</td>
+	                                				<td>${reserva.usuario.nombres}</td>
+	                                				
 	                                			</tr>
 	                                			<% i = i + 1; %>
-	                                		
+	                                		</c:if>
 	                                	</c:forEach>
 	                                	
 	                                </tbody>
