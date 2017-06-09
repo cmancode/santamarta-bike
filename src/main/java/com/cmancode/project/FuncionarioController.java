@@ -71,7 +71,7 @@ public class FuncionarioController {
 		Reserva reserva = null;
 		reserva = reservaService.buscarPorId(idTramite);
 	
-		reserva.setEstado("APROBADO");
+		reserva.setEstado("APROBADA");
 		System.out.println(reserva.getId());
 		reservaService.actualizarReserva(reserva);
 		return new ResponseEntity<Reserva>(HttpStatus.OK);
@@ -88,7 +88,7 @@ public class FuncionarioController {
 		bicicleta = biciService.buscarPorId(placa);
 		
 		bicicleta.setEstado("DISPONIBLE");
-		reserva.setEstado("RECHAZADO");
+		reserva.setEstado("RECHAZADA");
 		biciService.editarBici(bicicleta);
 		reservaService.actualizarReserva(reserva);
 		return new ResponseEntity<Reserva>(HttpStatus.OK);
