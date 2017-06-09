@@ -34,7 +34,7 @@
 	                                <tbody id="cuerpoTabla">
 	                                	<%! int i = 0;%>
 	                                	<c:forEach var="reserva" items="${reservas}">
-	                            			<c:if test="${reserva.estado == 'RESERVADO' }">
+	                            			<c:if test="${reserva.estado == 'PENDIENTE' }">
 	                                			<tr data-id="${reserva.id}"> 
 	                                				<td>${reserva.bicicleta.idTipoBici.tipo}</td>
 	                                				<td>${reserva.bicicleta.placa}</td>
